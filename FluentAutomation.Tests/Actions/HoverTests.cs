@@ -8,11 +8,6 @@ namespace FluentAutomation.Tests.Actions
 {
     public class HoverTests : BaseTest
     {
-        public HoverTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
         /// <summary>
         /// Hover over a simple block element, in this case an H1
@@ -40,6 +35,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void HoverInput()
         {
+            InputsPage.Go();
+
             I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.TextControlSelector);
             I.Hover(InputsPage.TextControlSelector)
              .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.TextControlSelector);
@@ -52,6 +49,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void HoverInputButton()
         {
+            InputsPage.Go();
+
             I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.InputButtonControlSelector);
             I.Hover(InputsPage.InputButtonControlSelector)
              .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.InputButtonControlSelector);
@@ -60,6 +59,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void HoverButton()
         {
+            InputsPage.Go();
+
             I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.ButtonControlSelector);
             I.Hover(InputsPage.ButtonControlSelector)
              .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.ButtonControlSelector);
@@ -96,7 +97,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void Scroll()
         {
-            var el = I.Find(InputsPage.ButtonControlSelector);
+            InputsPage.Go();
+            I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.ButtonControlSelector);
             I.Scroll(InputsPage.ButtonControlSelector)
              .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.ButtonControlSelector);
 
