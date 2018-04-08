@@ -1,4 +1,4 @@
-# Draki
+# Draki - smoke testing
 
 ### Simple and rapid critical path smoke testing for web apps
 
@@ -18,6 +18,7 @@
 ##### how is this different from FluentAutomation?
 
 * Mostly what this boiled down to is removing all the API calls that worked with the mouse X and Y position or used relative X and Y physical pixel offsets anywhere. These are the parts that result in brittle tests that break if a div changes size or position by a few pixels.
+* I'm hoping it won't be different and I can eventually replace my reliance on this project with FluentAutomation again, however I urgently need the testing features for a project that relies on the FluentAutomation syntax, and FluentAutomation is currently broken and not actively being developed. (last commit > 2 years ago.)
 * result is much smaller code base
 * The added benefit of the reduced API is a longer 'shelf life' between each package release before any update of Chrome or Selenium causes one of the API's on the test library to fail and require a new nuget release. 
 * The aim is to be able to automate the testing of new Chrome packages, and immediately (automatically) bring out a new nuget package if an update to Selenium passes all tests, without human intervention.
