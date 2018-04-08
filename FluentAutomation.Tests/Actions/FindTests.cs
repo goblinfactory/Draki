@@ -1,9 +1,5 @@
 ﻿using FluentAutomation.Exceptions;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xunit;
 using Assert = Xunit.Assert;
 
