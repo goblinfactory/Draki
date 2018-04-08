@@ -8,12 +8,6 @@ namespace FluentAutomation.Tests.Actions
 {
     public class FocusTests : BaseTest
     {
-        public FocusTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
-
         /// <summary>
         /// Attempt to focus a simple block element, in this case an H1
         /// </summary>
@@ -42,6 +36,7 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void FocusInput()
         {
+            InputsPage.Go();
             I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.TextControlSelector);
             I.Focus(InputsPage.TextControlSelector)
              .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.TextControlSelector);
@@ -54,6 +49,7 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void FocusInputButton()
         {
+            InputsPage.Go();
             I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.InputButtonControlSelector);
             I.Focus(InputsPage.InputButtonControlSelector)
              .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.InputButtonControlSelector);
@@ -62,6 +58,7 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void FocusButton()
         {
+            InputsPage.Go();
             I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.ButtonControlSelector);
             I.Focus(InputsPage.ButtonControlSelector)
              .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.ButtonControlSelector);
