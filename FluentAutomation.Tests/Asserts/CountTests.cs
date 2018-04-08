@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
@@ -14,7 +14,7 @@ namespace FluentAutomation.Tests.Asserts
             InputsPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void CountElements()
         {
             I.Assert
@@ -30,7 +30,7 @@ namespace FluentAutomation.Tests.Asserts
              .Count(0).Of(I.Find("crazyElementThatDoesntExist"));
         }
 
-        [Fact]
+        [Test]
         public void CountFailure()
         {
             I.Assert

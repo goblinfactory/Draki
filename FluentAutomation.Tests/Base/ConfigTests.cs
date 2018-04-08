@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Base
 {
     public class ConfigTests : BaseTest
     {
-        [Fact]
+        [Test]
         public void TestConfig()
         {
             Config

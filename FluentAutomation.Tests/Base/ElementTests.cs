@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Base
 {
@@ -14,7 +14,7 @@ namespace FluentAutomation.Tests.Base
             InputsPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void DetectTypeTests()
         {
             Assert.True(I.Find(InputsPage.TextControlSelector).Element.IsText);
@@ -22,13 +22,13 @@ namespace FluentAutomation.Tests.Base
             Assert.True(I.Find(InputsPage.MultiSelectControlSelector).Element.IsMultipleSelect);
         }
 
-        [Fact]
+        [Test]
         public void AttributeTests()
         {
             Assert.True(I.Find(InputsPage.TextControlSelector).Element.Attributes.Get("id") == InputsPage.TextControlSelector.Substring(1));
         }
 
-        [Fact]
+        [Test]
         public void ElementSelectTests()
         {
             var selectElement = I.Find(InputsPage.MultiSelectControlSelector);
@@ -39,28 +39,28 @@ namespace FluentAutomation.Tests.Base
             Assert.True(selectElement.Element.SelectedOptionValues.Count(x => x == "MB") == 1);
         }
 
-        [Fact]
+        [Test]
         public void ElementWidthHeightTests()
         {
             Assert.True(I.Find(InputsPage.InputButtonControlSelector).Element.Width > 0);
             Assert.True(I.Find(InputsPage.InputButtonControlSelector).Element.Height > 0);
         }
 
-        [Fact]
+        [Test]
         public void ElementPositionTests()
         {
             Assert.True(I.Find(InputsPage.InputButtonControlSelector).Element.PosX > 0);
             Assert.True(I.Find(InputsPage.InputButtonControlSelector).Element.PosY > 0);
         }
 
-        [Fact]
+        [Test]
         public void ElementOtherParamsTests()
         {
             Assert.True(I.Find(InputsPage.InputButtonControlSelector).Element.Selector == InputsPage.InputButtonControlSelector);
             Assert.True(I.Find(InputsPage.InputButtonControlSelector).Element.TagName == "input");
         }
 
-        [Fact]
+        [Test]
         public void ElementTextValueTests()
         {
             I.Enter("Valid Text").In(InputsPage.TextControlSelector);

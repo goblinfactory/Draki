@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
@@ -17,7 +17,7 @@ namespace FluentAutomation.Tests.Actions
         /// <summary>
         /// Hover over a simple block element, in this case an H1
         /// </summary>
-        [Fact]
+        [Test]
         public void HoverBlockElement()
         {
             TextPage.Go();
@@ -27,7 +27,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.HoverColor).On(TextPage.TitleSelector);
         }
 
-        [Fact]
+        [Test]
         public void HoverLink()
         {
             TextPage.Go();
@@ -37,7 +37,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.HoverColor).On(TextPage.Link1Selector);
         }
 
-        [Fact]
+        [Test]
         public void HoverInput()
         {
             I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.TextControlSelector);
@@ -49,7 +49,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.TextareaControlSelector);
         }
 
-        [Fact]
+        [Test]
         public void HoverInputButton()
         {
             I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.InputButtonControlSelector);
@@ -57,7 +57,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.InputButtonControlSelector);
         }
 
-        [Fact]
+        [Test]
         public void HoverButton()
         {
             I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.ButtonControlSelector);
@@ -68,7 +68,7 @@ namespace FluentAutomation.Tests.Actions
         /// <summary>
         /// Test that Hover actually pulls elements into the viewport
         /// </summary>
-        [Fact]
+        [Test]
         public void HoverScroll()
         {
             ScrollingPage.Go();
@@ -93,7 +93,7 @@ namespace FluentAutomation.Tests.Actions
         /// <summary>
         /// Test that Scroll is equivalent to Hover
         /// </summary>
-        [Fact]
+        [Test]
         public void Scroll()
         {
             var el = I.Find(InputsPage.ButtonControlSelector);

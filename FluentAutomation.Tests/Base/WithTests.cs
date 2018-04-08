@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Base
 {
@@ -13,7 +13,7 @@ namespace FluentAutomation.Tests.Base
         {
         }
 
-        [Fact]
+        [Test]
         public void WithTimeouts()
         {
             With

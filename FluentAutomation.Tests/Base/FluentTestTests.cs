@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Base
 {
@@ -14,7 +14,7 @@ namespace FluentAutomation.Tests.Base
         {
         }
 
-        [Fact]
+        [Test]
         public void WebDriverIsAvailable()
         {
             Assert.True(this.Provider != null);
@@ -34,7 +34,7 @@ namespace FluentAutomation.Tests.Base
             Config.MinimizeAllWindowsOnTestStart(true);
         }
 
-        [Fact]
+        [Test]
         public void ProviderIsAvailable()
         {
             I.Open("http://google.com/");

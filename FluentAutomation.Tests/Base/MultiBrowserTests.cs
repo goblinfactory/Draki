@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Base
 {
@@ -11,9 +11,8 @@ namespace FluentAutomation.Tests.Base
     // to group them. Maybe later.
     public class MultiBrowserTests : FluentTest
     {
-
-        [Fact(Skip = "manual for now until I ensure I can test everything on Appveyor")]
         /// See https://github.com/stirno/FluentAutomation/issues/104
+        [Test,Ignore("manual for now until I ensure I can test everything on Appveyor")]
         public void AssertShouldFailTest()
         {
             FluentAutomation.SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome, SeleniumWebDriver.Browser.Firefox);

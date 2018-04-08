@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
@@ -14,7 +14,7 @@ namespace FluentAutomation.Tests.Actions
             InputsPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void PressType()
         {
             I.Focus(InputsPage.TextControlSelector)

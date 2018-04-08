@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
@@ -14,7 +14,7 @@ namespace FluentAutomation.Tests.Asserts
             throw new FluentException("wat");
         }
 
-        [Fact]
+        [Test]
         public void TestThrow()
         {
             I.Assert.Throws(() => I.Assert.True(() => false));

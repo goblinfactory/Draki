@@ -1,52 +1,52 @@
-﻿using FluentAutomation.Exceptions;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Xunit;
+﻿using System;
+using FluentAutomation.Exceptions;
+using NUnit.Framework;
+
 
 namespace FluentAutomation.Tests.Actions
 {
     public class ClickTests : BaseTest
     {
-        public ClickTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
-
-        [Fact]
+        [Test]
         public void LeftClick()
         {
+            InputsPage.Go();
             I.Click(InputsPage.ButtonControlSelector)
-             .Assert.Text("Button Clicked").In(InputsPage.ButtonClickedTextSelector);
+                .WaitUntil(()=> I.Expect.Text("Button Clicked").In(InputsPage.ButtonClickedTextSelector));
 
             I.Click(InputsPage.InputButtonControlSelector)
-             .Assert.Text("Input Button Clicked").In(InputsPage.ButtonClickedTextSelector);
+                .WaitUntil(()=> I.Expect.Text("Input Button Clicked").In(InputsPage.ButtonClickedTextSelector));
         }
 
-        [Fact]
+        [Test]
         public void RightClick()
         {
+            InputsPage.Go();
+            // TODO: write up demo code showing how this needs to be done to cater for page settling down
+            // TODO: create new overloaded method that does this automatically in 1 step
+
             I.RightClick(InputsPage.ButtonControlSelector)
-             .Assert.Text("Button Right Clicked").In(InputsPage.ButtonClickedTextSelector);
+                .WaitUntil(()=> I.Expect.Text("Button Right Clicked").In(InputsPage.ButtonClickedTextSelector));
 
             I.RightClick(InputsPage.InputButtonControlSelector)
-             .Assert.Text("Input Button Right Clicked").In(InputsPage.ButtonClickedTextSelector);
+                .WaitUntil(()=> I.Expect.Text("Input Button Right Clicked").In(InputsPage.ButtonClickedTextSelector));
         }
 
-        [Fact]
+        //[Test]
         public void DoubleClick()
         {
+            InputsPage.Go();
             I.DoubleClick(InputsPage.ButtonControlSelector)
-             .Assert.Text("Button Double Clicked").In(InputsPage.ButtonClickedTextSelector);
+                .WaitUntil(()=> I.Expect.Text("Button Double Clicked").In(InputsPage.ButtonClickedTextSelector));
+
+            // double click is in fact 4 events, mousedown, up, down and up again, 
+            // so we have to "wait" until page settles down, i.e. our condition we are looking for is met, since the text values might be cycling through various options
 
             I.DoubleClick(InputsPage.InputButtonControlSelector)
-             .Assert.Text("Input Button Double Clicked").In(InputsPage.ButtonClickedTextSelector);
+                .WaitUntil(()=> I.Expect.Text("Input Button Double Clicked").In(InputsPage.ButtonClickedTextSelector));
         }
 
-        [Fact]
+        [Test]
         public void AlertClicks()
         {
             AlertsPage.Go();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Xunit;
+using NUnit.Framework;
 using System.Globalization;
 using FluentAutomation.Exceptions;
 
@@ -25,7 +25,7 @@ namespace FluentAutomation.Tests.Actions
             TextPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void TakeScreenshot()
         {
             var screenshotName = string.Format(CultureInfo.CurrentCulture, "TakeScreenshot_{0}", DateTimeOffset.Now.Date.ToFileTime());
@@ -45,7 +45,7 @@ namespace FluentAutomation.Tests.Actions
             }
         }
         
-        [Fact]
+        [Test]
         public void ScreenshotOnFailedAction()
         {
 
@@ -56,9 +56,7 @@ namespace FluentAutomation.Tests.Actions
 
                 var lastFile = MostRecentTempFile()?.Name ?? "xx.xx";
 
-                var exception = Record.Exception(() => I.Click("#nope"));
-                
-                Assert.IsType<FluentException>(exception);
+                var exception = Assert.Throws<FluentException> (() => I.Click("#nope"));
 
                 var newFile = MostRecentTempFile();
 
@@ -81,7 +79,7 @@ namespace FluentAutomation.Tests.Actions
             return (new DirectoryInfo(tempPath).GetFiles("*.png").OrderByDescending(f => f.CreationTime)).FirstOrDefault();
         }
 
-        [Fact]
+        [Test]
         public void ScreenshotOnFailedAssert()
         {
             var c = Config.Settings.ScreenshotOnFailedAssert;
@@ -90,9 +88,7 @@ namespace FluentAutomation.Tests.Actions
             {
                 var lastFile = MostRecentTempFile()?.Name ?? "xx.xx";
 
-                var exception = Record.Exception(() => I.Assert.True(() => false));
-
-                Assert.IsType<FluentException>(exception);
+                Assert.Throws<FluentException>(() => I.Assert.True(() => false));
 
                 var newFile = MostRecentTempFile();
 
@@ -112,7 +108,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         /*
-        [Fact]
+        [Test]
         public void ScreenshotOnFailedExpect()
         {
             var c = Config.Settings.ScreenshotOnFailedExpect;

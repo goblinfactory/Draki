@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Base
 {
     public class PageObjectTests : BaseTest
     {
-        [Fact]
+        [Test]
         public void SwitchPageObject()
         {
             SwitchPage.Go();

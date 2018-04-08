@@ -1,38 +1,37 @@
 ﻿using FluentAutomation.Exceptions;
 using System.Linq;
-using Xunit;
-using Assert = Xunit.Assert;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
     public class FindTests : BaseTest
     {
-        public FindTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
-        [Fact]
+        [Test]
         public void FindElement()
         {
+            InputsPage.Go();
             var element = I.Find(InputsPage.TextControlSelector).Element;
-
-            // simple assert on element to ensure it was properly loaded
             Assert.True(element.IsText);
-            Assert.Throws<FluentElementNotFoundException>(() => I.Find("doesntexist").Element);
         }
 
-        [Fact]
+        public void FindNonExistentElementThrowsTest()
+        {
+            Assert.Throws<FluentElementNotFoundException>(() => I.Find("doesntexist").Element.ToString()); // accessing Element executes the Find
+        }
+
+        [Test]
         public void FindSpecificElementTest()
         {
+            InputsPage.Go();
             Assert.True(I.Find(InputsPage.ButtonControlSelector).Element.Text == "Button");
         }
 
 
-        [Fact]
+        [Test]
         public void FindMultipleElements()
         {
+            InputsPage.Go();
             var proxy = I.FindMultiple("div");
 
             Assert.True(proxy.Elements.Count > 1);
@@ -40,12 +39,13 @@ namespace FluentAutomation.Tests.Actions
             Assert.True(proxy.Element.Text == proxy.Element.Value);
         }
 
-        [Fact]
+        [Test]
         public void AttemptToFindFakeElement()
         {
-            var exception = Assert.Throws<FluentElementNotFoundException>(() => I.Find("#fake-control").Element.ToString()); // accessing Element executes the Find
+            InputsPage.Go();
+            var exception = Assert.Throws<FluentElementNotFoundException>(() => I.Find("#very-fake-control").Element.ToString()); // accessing Element executes the Find
             Assert.True(exception.Message.Contains("Unable to find"));
-            Assert.Throws<FluentElementNotFoundException>(() => I.FindMultiple("doesntexist").Element);
+            Assert.Throws<FluentElementNotFoundException>(() => I.FindMultiple("doesntexist").Element.ToString());
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using FluentAutomation.Interfaces;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
@@ -11,7 +11,7 @@ namespace FluentAutomation.Tests.Actions
             DragPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void DragAndDropBySelector()
         {
             var peg = I.Find(DragPage.Peg1).Element;

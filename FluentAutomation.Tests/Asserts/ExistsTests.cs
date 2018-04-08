@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
@@ -14,7 +14,7 @@ namespace FluentAutomation.Tests.Asserts
             InputsPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void ElementExists()
         {
             I.Assert

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
@@ -14,7 +14,7 @@ namespace FluentAutomation.Tests.Actions
             SwitchPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void FrameSwitchTest()
         {
             I.Switch.Frame(SwitchPage.IFrameSelector)
@@ -28,21 +28,20 @@ namespace FluentAutomation.Tests.Actions
         }
 
         //TODO: Need to mark this as a slow test!
-        [Fact]
+        [Test]
         public void FrameSwitchToNonexistantFrameThrowsTest()
         {
             I.Switch.Frame(SwitchPage.IFrameSelector)
              .Assert.Text("Alerts Testbed").In("h2");
 
-            var ex = Record.Exception(() => I.Switch.Frame("nonExistentFrame"));
-            Assert.IsType<FluentException>(ex);
+            var ex = Assert.Throws<FluentException>(() => I.Switch.Frame("nonExistentFrame"));
             // actual message is "No frame element found with name or id non existent frame" 
             // but not using that in case the format changes.
-            Assert.Contains("nonExistentFrame", ex.InnerException.Message);
+            StringAssert.Contains("nonExistentFrame", ex.InnerException.Message);
         }
 
 
-        [Fact]
+        [Test]
         public void WindowSwitchTest()
         {
             I.Click(SwitchPage.NewWindowSelector);
@@ -59,9 +58,7 @@ namespace FluentAutomation.Tests.Actions
             I.Switch.Window()
              .Assert.Text("Switch Testbed").In("h2");
 
-
-            var ex = Record.Exception(() => I.Switch.Window("non existent window"));
-            Assert.IsType<FluentException>(ex);
+            Assert.Throws<FluentException>(() => I.Switch.Window("non existent window"));
         }
     }
 }

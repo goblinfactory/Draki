@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
     public class WaitTests : BaseTest
     {
-        [Fact]
+        [Test]
         public void Wait()
         {
             With.Wait(TimeSpan.FromMilliseconds(50)).Then.Wait();
@@ -17,7 +17,7 @@ namespace FluentAutomation.Tests.Actions
             I.Wait(TimeSpan.FromMilliseconds(50));
         }
 
-        [Fact]
+        [Test]
         public void WaitUntil()
         {
             var waitUntilTimeout = FluentSettings.Current.WaitUntilTimeout;

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
@@ -15,7 +15,7 @@ namespace FluentAutomation.Tests.Asserts
             InputsPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void ValueInInputs()
         {
             // setup
@@ -62,7 +62,7 @@ namespace FluentAutomation.Tests.Asserts
             Assert.Throws<FluentExpectFailedException>(() => I.Expect.Value(x => x == validText).Not.In(InputsPage.TextControlSelector));
         }
         
-        [Fact]
+        [Test]
         public void ValueInSelects()
         {
             // setup
@@ -91,7 +91,7 @@ namespace FluentAutomation.Tests.Asserts
             Assert.Throws<FluentExpectFailedException>(() => I.Expect.Value(x => x == "MB").Not.In(InputsPage.SelectControlSelector));
         }
 
-        [Fact]
+        [Test]
         public void ValueInMultiSelects()
         {
             // setup
@@ -134,7 +134,7 @@ namespace FluentAutomation.Tests.Asserts
             Assert.Throws<FluentExpectFailedException>(() => I.Expect.Value(x => x == "MB").Not.In(I.Find(InputsPage.MultiSelectControlSelector)));
         }
 
-        [Fact]
+        [Test]
         public void ValueInAlerts()
         {
             AlertsPage.Go();

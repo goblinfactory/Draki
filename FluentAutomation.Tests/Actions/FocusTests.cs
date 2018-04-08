@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
@@ -17,7 +17,7 @@ namespace FluentAutomation.Tests.Actions
         /// <summary>
         /// Attempt to focus a simple block element, in this case an H1
         /// </summary>
-        [Fact]
+        [Test]
         public void FocusBlockElement()
         {
             TextPage.Go();
@@ -29,7 +29,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.FocusColor).Not.On(TextPage.TitleSelector);
         }
 
-        [Fact]
+        [Test]
         public void FocusLink()
         {
             TextPage.Go();
@@ -39,7 +39,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.FocusColor).On(TextPage.Link1Selector);
         }
 
-        [Fact]
+        [Test]
         public void FocusInput()
         {
             I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.TextControlSelector);
@@ -51,7 +51,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.TextareaControlSelector);
         }
 
-        [Fact]
+        [Test]
         public void FocusInputButton()
         {
             I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.InputButtonControlSelector);
@@ -59,7 +59,7 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.InputButtonControlSelector);
         }
 
-        [Fact]
+        [Test]
         public void FocusButton()
         {
             I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.ButtonControlSelector);
@@ -70,7 +70,7 @@ namespace FluentAutomation.Tests.Actions
         /// <summary>
         /// Test that we can still focus elements outside of the viewport
         /// </summary>
-        [Fact]
+        [Test]
         public void FocusScroll()
         {
             ScrollingPage.Go();

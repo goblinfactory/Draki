@@ -3,20 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
     public class BooleanTests : AssertBaseTest
     {
-        [Fact]
+        [Test]
         public void True()
         {
             I.Assert.True(() => true);
             Assert.Throws<FluentException>(() => I.Assert.True(() => false));
         }
 
-        [Fact]
+        [Test]
         public void False()
         {
             I.Assert.False(() => false);

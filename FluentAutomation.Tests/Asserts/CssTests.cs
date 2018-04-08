@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
@@ -15,7 +15,7 @@ namespace FluentAutomation.Tests.Asserts
             InputsPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void TestClass()
         {
             I.Assert
@@ -37,7 +37,7 @@ namespace FluentAutomation.Tests.Asserts
             Assert.Throws<FluentException>(() => I.Assert.Class("not-form-group").On(I.Find(InputsPage.FormGroupDivSelector)));
         }
 
-        [Fact]
+        [Test]
         public void TestCss()
         {
             var configWaitUntilTimeout = FluentSettings.Current.WaitUntilTimeout;

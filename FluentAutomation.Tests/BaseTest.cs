@@ -1,9 +1,5 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Xunit;
 
 namespace FluentAutomation.Tests
 {
@@ -20,15 +16,15 @@ namespace FluentAutomation.Tests
             Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
 
             // Create Page Objects
-            this.InputsPage = new Pages.InputsPage(this);
-            this.AlertsPage = new Pages.AlertsPage(this);
-            this.ScrollingPage = new Pages.ScrollingPage(this);
-            this.TextPage = new Pages.TextPage(this);
-            this.DragPage = new Pages.DragPage(this);
-            this.SwitchPage = new Pages.SwitchPage(this);
+            InputsPage = new Pages.InputsPage(this);
+            AlertsPage = new Pages.AlertsPage(this);
+            ScrollingPage = new Pages.ScrollingPage(this);
+            TextPage = new Pages.TextPage(this);
+            DragPage = new Pages.DragPage(this);
+            SwitchPage = new Pages.SwitchPage(this);
             
             // Default tests use chrome and load the site
-            FluentAutomation.SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome);//, SeleniumWebDriver.Browser.InternetExplorer, SeleniumWebDriver.Browser.Firefox);
+            SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome);//, SeleniumWebDriver.Browser.InternetExplorer, SeleniumWebDriver.Browser.Firefox);
             I.Open(SiteUrl);
         }
 

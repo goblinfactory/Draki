@@ -1,10 +1,5 @@
 ﻿using FluentAutomation.Exceptions;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
@@ -16,7 +11,7 @@ namespace FluentAutomation.Tests.Actions
             InputsPage.Go();
         }
 
-        [Fact]
+        [Test]
         public void AppendTextToValidInput()
         {
             // set the base string so we know what the appended result will be
@@ -42,18 +37,18 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Text("BaseStringOther Test String").In(InputsPage.TextareaControlSelector);
         }
 
-        [Fact]
+        [Test]
         public void AppendTextToInvalidInputUsingSelector()
         {
             var exception = Assert.Throws<FluentElementNotFoundException>(() => I.Append("Test String").To("#text-control-fake"));
             Assert.True(exception.Message.Contains("Unable to find"));
         }
 
-        [Fact]
+        [Test]
         public void AppendTextToSelect()
         {
             // Append cannot be used on non-text elements
-            var exception = Assert.Throws<FluentElementNotFoundException>(() => I.Append("QA").To(InputsPage.SelectControlSelector));
+            var exception = Assert.Throws<FluentException>(() => I.Append("QA").To(InputsPage.SelectControlSelector));
             Assert.True(exception.Message.Contains("only supported"));
         }
     }

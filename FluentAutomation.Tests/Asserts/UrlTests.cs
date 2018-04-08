@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
@@ -15,7 +15,7 @@ namespace FluentAutomation.Tests.Asserts
             I.Open(this.SiteUrl);
         }
 
-        [Fact]
+        [Test]
         public void TestUrl()
         {
             I.Assert

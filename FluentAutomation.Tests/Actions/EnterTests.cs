@@ -4,21 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
     public class EnterTests : BaseTest
     {
-        public EnterTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
-        [Fact]
+        [Test]
         public void EnterTextInValidInput()
         {
+            InputsPage.Go();
             // enter text, verify change fired
             I.Enter("Test String").In(InputsPage.TextControlSelector)
              .Assert.Text("Test String").In(InputsPage.TextControlSelector);
@@ -38,22 +34,24 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Text("10").In(InputsPage.TextControlSelector);
         }
 
-        [Fact]
+        [Test]
         public void EnterTextInInvalidInputUsingSelector()
         {
+            InputsPage.Go();
             var exception = Assert.Throws<FluentElementNotFoundException>(() => I.Enter("Test String").In("#text-control-fake"));
             Assert.True(exception.Message.Contains("Unable to find"));
         }
 
-        [Fact]
+        [Test]
         public void EnterTextInSelect()
         {
+            InputsPage.Go();
             // Enter cannot be used on non-text elements
             var exception = Assert.Throws<FluentException>(() => I.Enter("QA").In(InputsPage.SelectControlSelector));
             Assert.True(exception.Message.Contains("only supported"));
         }
 
-        [Fact]
+        [Test]
         public void EnterTextInAlertConfirmPrompt()
         {
             AlertsPage.Go();
@@ -66,9 +64,10 @@ namespace FluentAutomation.Tests.Actions
             Assert.Throws<FluentException>(() => I.Enter("Wat2").In(Alert.Message));
         }
 
-        [Fact]
+        [Test]
         public void EnterTextInElementTypes()
         {
+            InputsPage.Go();
             I.Enter("test").In(InputsPage.TextEmailControlSelector)
              .Assert.Value("test").In(InputsPage.TextEmailControlSelector);
 
