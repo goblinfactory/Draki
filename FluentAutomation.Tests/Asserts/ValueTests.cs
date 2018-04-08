@@ -1,23 +1,15 @@
 ﻿using FluentAutomation.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Asserts
 {
     public class ValueTests : AssertBaseTest
     {
-        public ValueTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
-
         [Test]
         public void ValueInInputs()
         {
+            InputsPage.Go();
+
             // setup
             var validText = "Validation Text";
             var invalidText = "Invalid Text";
@@ -65,6 +57,8 @@ namespace FluentAutomation.Tests.Asserts
         [Test]
         public void ValueInSelects()
         {
+            InputsPage.Go();
+
             // setup
             I.Select("Manitoba").From(InputsPage.SelectControlSelector);
 
@@ -94,6 +88,8 @@ namespace FluentAutomation.Tests.Asserts
         [Test]
         public void ValueInMultiSelects()
         {
+            InputsPage.Go();
+
             // setup
             I.Select("Manitoba", "Saskatchewan").From(InputsPage.MultiSelectControlSelector);
 
