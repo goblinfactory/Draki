@@ -92,6 +92,7 @@
     <Compile Include="Base\MultiBrowserTests.cs" />
     <Compile Include="Base\PageObjectTests.cs" />
     <Compile Include="Base\WithTests.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Pages\AlertsPage.cs" />
     <Compile Include="Pages\DragPage.cs" />
     <Compile Include="Pages\SwitchPage.cs" />

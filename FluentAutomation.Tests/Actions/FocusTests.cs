@@ -34,6 +34,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void FocusInput()
         {
             InputsPage.Go();
@@ -68,6 +69,7 @@ namespace FluentAutomation.Tests.Actions
         /// Test that we can still focus elements outside of the viewport
         /// </summary>
         [Test]
+        [Category(Category.SLOW)]
         public void FocusScroll()
         {
             ScrollingPage.Go();

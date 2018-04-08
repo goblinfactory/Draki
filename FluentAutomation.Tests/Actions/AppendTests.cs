@@ -12,6 +12,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void AppendTextToValidInput()
         {
             // set the base string so we know what the appended result will be

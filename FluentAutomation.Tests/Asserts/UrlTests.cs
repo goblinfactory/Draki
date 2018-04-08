@@ -16,6 +16,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void TestUrl()
         {
             I.Assert

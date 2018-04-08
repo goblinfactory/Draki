@@ -12,6 +12,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void DragAndDropBySelector()
         {
             var peg = I.Find(DragPage.Peg1).Element;

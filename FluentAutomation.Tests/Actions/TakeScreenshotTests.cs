@@ -46,6 +46,7 @@ namespace FluentAutomation.Tests.Actions
         }
         
         [Test]
+        [Category(Category.SLOW)]
         public void ScreenshotOnFailedAction()
         {
 
@@ -80,6 +81,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void ScreenshotOnFailedAssert()
         {
             var c = Config.Settings.ScreenshotOnFailedAssert;

@@ -15,6 +15,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void TestThrow()
         {
             I.Assert.Throws(() => I.Assert.True(() => false));

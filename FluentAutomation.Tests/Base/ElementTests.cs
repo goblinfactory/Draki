@@ -29,6 +29,7 @@ namespace FluentAutomation.Tests.Base
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void ElementSelectTests()
         {
             var selectElement = I.Find(InputsPage.MultiSelectControlSelector);

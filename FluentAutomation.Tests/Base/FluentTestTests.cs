@@ -35,6 +35,7 @@ namespace FluentAutomation.Tests.Base
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void ProviderIsAvailable()
         {
             I.Open("http://google.com/");

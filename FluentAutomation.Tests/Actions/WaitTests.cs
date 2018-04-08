@@ -18,6 +18,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void WaitUntil()
         {
             var waitUntilTimeout = FluentSettings.Current.WaitUntilTimeout;

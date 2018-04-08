@@ -24,6 +24,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void SelectIndex()
         {
             I.Select(3).From(InputsPage.SelectControlSelector)
@@ -40,6 +41,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void SelectClearsOptionBetweenSelections()
         {
             I.Select("Québec").From(InputsPage.SelectControlSelector)
@@ -52,6 +54,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void SelectTextFailed()
         {
             var exception = Assert.Throws<FluentException>(() => I.Select("NonExistentText").From(InputsPage.SelectControlSelector));
@@ -59,6 +62,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void SelectValueFailed()
         {
             var exception = Assert.Throws<FluentException>(() => I.Select(Option.Value, "NonExistentValue").From(InputsPage.SelectControlSelector));
@@ -73,6 +77,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void MultiSelectValue()
         {
             I.Select(Option.Value, "QC", "MB").From(InputsPage.MultiSelectControlSelector)
@@ -83,6 +88,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void MultiSelectIndex()
         {
             I.Select(2).From(InputsPage.MultiSelectControlSelector)
@@ -97,6 +103,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void MultiSelectText()
         {
             I.Select("Manitoba").From(InputsPage.MultiSelectControlSelector)
@@ -121,6 +128,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void MultiSelectClearOptionsBetweenSelections()
         {
             I.Select(Option.Value, "QC", "MB").From(InputsPage.MultiSelectControlSelector)

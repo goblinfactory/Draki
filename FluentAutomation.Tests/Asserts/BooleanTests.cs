@@ -10,6 +10,7 @@ namespace FluentAutomation.Tests.Asserts
     public class BooleanTests : AssertBaseTest
     {
         [Test]
+        [Category(Category.SLOW)]
         public void True()
         {
             I.Assert.True(() => true);
@@ -17,6 +18,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void False()
         {
             I.Assert.False(() => false);

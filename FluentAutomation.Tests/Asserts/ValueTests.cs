@@ -6,6 +6,7 @@ namespace FluentAutomation.Tests.Asserts
     public class ValueTests : AssertBaseTest
     {
         [Test]
+        [Category(Category.VERYSLOW)]
         public void ValueInInputs()
         {
             InputsPage.Go();
@@ -55,6 +56,7 @@ namespace FluentAutomation.Tests.Asserts
         }
         
         [Test]
+        [Category(Category.VERYSLOW)]
         public void ValueInSelects()
         {
             InputsPage.Go();
@@ -86,6 +88,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void ValueInMultiSelects()
         {
             InputsPage.Go();
@@ -131,6 +134,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void ValueInAlerts()
         {
             AlertsPage.Go();

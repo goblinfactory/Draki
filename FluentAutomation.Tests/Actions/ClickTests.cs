@@ -8,6 +8,7 @@ namespace FluentAutomation.Tests.Actions
     public class ClickTests : BaseTest
     {
         [Test]
+        [Category(Category.SLOW)]
         public void LeftClick()
         {
             InputsPage.Go();
@@ -19,6 +20,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void RightClick()
         {
             InputsPage.Go();
@@ -47,6 +49,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void AlertClicks()
         {
             AlertsPage.Go();

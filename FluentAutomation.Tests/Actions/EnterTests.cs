@@ -12,6 +12,7 @@ namespace FluentAutomation.Tests.Actions
     {
 
         [Test]
+        [Category(Category.SLOW)]
         public void EnterTextInValidInput()
         {
             InputsPage.Go();
@@ -52,6 +53,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void EnterTextInAlertConfirmPrompt()
         {
             AlertsPage.Go();
@@ -65,6 +67,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void EnterTextInElementTypes()
         {
             InputsPage.Go();

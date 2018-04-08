@@ -15,6 +15,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void CountElements()
         {
             I.Assert
@@ -31,6 +32,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void CountFailure()
         {
             I.Assert

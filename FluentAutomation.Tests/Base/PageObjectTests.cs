@@ -11,6 +11,7 @@ namespace FluentAutomation.Tests.Base
     public class PageObjectTests : BaseTest
     {
         [Test]
+        [Category(Category.SLOW)]
         public void SwitchPageObject()
         {
             SwitchPage.Go();

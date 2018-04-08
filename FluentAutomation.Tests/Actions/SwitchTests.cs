@@ -11,6 +11,7 @@ namespace FluentAutomation.Tests.Actions
     {
 
         [Test]
+        [Category(Category.SLOW)]
         public void FrameSwitchTest()
         {
             SwitchPage.Go();
@@ -25,8 +26,8 @@ namespace FluentAutomation.Tests.Actions
              .Assert.Text("Alerts Testbed").In("h2");
         }
 
-        //TODO: Need to mark this as a slow test!
         [Test]
+        [Category(Category.VERYSLOW)]
         public void FrameSwitchToNonexistantFrameThrowsTest()
         {
             SwitchPage.Go();
@@ -42,6 +43,7 @@ namespace FluentAutomation.Tests.Actions
 
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void WindowSwitchTest()
         {
             SwitchPage.Go();

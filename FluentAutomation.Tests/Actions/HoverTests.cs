@@ -33,6 +33,7 @@ namespace FluentAutomation.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void HoverInput()
         {
             InputsPage.Go();
@@ -95,6 +96,7 @@ namespace FluentAutomation.Tests.Actions
         /// Test that Scroll is equivalent to Hover
         /// </summary>
         [Test]
+        [Category(Category.SLOW)]
         public void Scroll()
         {
             InputsPage.Go();

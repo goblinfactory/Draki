@@ -41,6 +41,17 @@ namespace FluentAutomation.Tests.Asserts
                 .Text(t => t == invalidText).Not.In(InputsPage.TextControlSelector)
                 .Text(invalidText).Not.In(I.Find(InputsPage.TextControlSelector))
                 .Text(t => t == invalidText).Not.In(I.Find(InputsPage.TextControlSelector));
+        }
+
+        [Test]
+        public void TextInInputsInvalidAssertions()
+        {
+            InputsPage.Go();
+
+            // setup
+            var validText = "Validation Text";
+            var invalidText = "Invalid Text";
+            I.Enter(validText).In(InputsPage.TextControlSelector);
 
             // Throw due to invalid assertion
             var exception = Assert.Throws<FluentException>(() => I.Assert.Text(invalidText).In(InputsPage.TextControlSelector));
@@ -48,14 +59,26 @@ namespace FluentAutomation.Tests.Asserts
             Assert.Throws<FluentException>(() => I.Assert.Text(invalidText).In(I.Find(InputsPage.TextControlSelector)));
             Assert.Throws<FluentException>(() => I.Assert.Text(validText).Not.In(InputsPage.TextControlSelector));
             Assert.Throws<FluentException>(() => I.Assert.Text(validText).Not.In(I.Find(InputsPage.TextControlSelector)));
+        }
+
+        [Test]
+        public void TextInInputsInvalidExpects()
+        {
+            InputsPage.Go();
+
+            // setup
+            var validText = "Validation Text";
+            var invalidText = "Invalid Text";
+            I.Enter(validText).In(InputsPage.TextControlSelector);
 
             // Throw due to invalid expect
-            exception = Assert.Throws<FluentExpectFailedException>(() => I.Expect.Text(invalidText).In(InputsPage.TextControlSelector));
+            var exception = Assert.Throws<FluentExpectFailedException>(() => I.Expect.Text(invalidText).In(InputsPage.TextControlSelector));
             Assert.True(exception.Message.Contains(invalidText) && exception.Message.Contains(validText));
             Assert.Throws<FluentExpectFailedException>(() => I.Expect.Text(invalidText).In(I.Find(InputsPage.TextControlSelector)));
             Assert.Throws<FluentExpectFailedException>(() => I.Expect.Text(validText).Not.In(InputsPage.TextControlSelector));
             Assert.Throws<FluentExpectFailedException>(() => I.Expect.Text(validText).Not.In(I.Find(InputsPage.TextControlSelector)));
         }
+
 
         [Test]
         public void TextInSelects()
@@ -87,6 +110,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void TextInMultiSelects()
         {
             InputsPage.Go();
@@ -140,6 +164,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void TextInAlerts()
         {
             AlertsPage.Go();

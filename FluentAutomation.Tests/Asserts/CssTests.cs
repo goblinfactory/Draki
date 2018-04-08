@@ -16,6 +16,7 @@ namespace FluentAutomation.Tests.Asserts
         }
 
         [Test]
+        [Category(Category.VERYSLOW)]
         public void TestClass()
         {
             I.Assert
