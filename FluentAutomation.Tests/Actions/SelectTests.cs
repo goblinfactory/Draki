@@ -1,24 +1,16 @@
 ﻿using FluentAutomation.Exceptions;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace FluentAutomation.Tests.Actions
 {
     public class SelectTests : BaseTest
     {
-        public SelectTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
         [Test]
         public void SelectValue()
         {
+            InputsPage.Go();
+
             I.Select(Option.Value, "QC").From(InputsPage.SelectControlSelector)
              .Assert.Text("Québec").In(InputsPage.SelectControlSelector);
         }
@@ -27,6 +19,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.SLOW)]
         public void SelectIndex()
         {
+            InputsPage.Go();
+
             I.Select(3).From(InputsPage.SelectControlSelector)
              .Assert
                 .Value("MB").In(InputsPage.SelectControlSelector)
@@ -36,6 +30,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void SelectText()
         {
+            InputsPage.Go();
+
             I.Select("Québec").From(InputsPage.SelectControlSelector)
              .Assert.Value("QC").In(InputsPage.SelectControlSelector);
         }
@@ -44,6 +40,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.SLOW)]
         public void SelectClearsOptionBetweenSelections()
         {
+            InputsPage.Go();
+
             I.Select("Québec").From(InputsPage.SelectControlSelector)
              .Assert.Value("QC").In(InputsPage.SelectControlSelector);
 
@@ -57,6 +55,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.VERYSLOW)]
         public void SelectTextFailed()
         {
+            InputsPage.Go();
+
             var exception = Assert.Throws<FluentException>(() => I.Select("NonExistentText").From(InputsPage.SelectControlSelector));
             Assert.True(exception.InnerException.Message.Contains("NonExistentText"));
         }
@@ -65,6 +65,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.VERYSLOW)]
         public void SelectValueFailed()
         {
+            InputsPage.Go();
+
             var exception = Assert.Throws<FluentException>(() => I.Select(Option.Value, "NonExistentValue").From(InputsPage.SelectControlSelector));
             Assert.True(exception.InnerException.Message.Contains("NonExistentValue"));
         }
@@ -72,6 +74,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void SelectIndexFailed()
         {
+            InputsPage.Go();
+
             var exception = Assert.Throws<FluentException>(() => I.Select(1000).From(InputsPage.SelectControlSelector));
             Assert.True(exception.InnerException.Message.Contains("1000"));
         }
@@ -80,6 +84,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.SLOW)]
         public void MultiSelectValue()
         {
+            InputsPage.Go();
+
             I.Select(Option.Value, "QC", "MB").From(InputsPage.MultiSelectControlSelector)
              .Assert
                 .Text("Québec").In(InputsPage.MultiSelectControlSelector)
@@ -91,6 +97,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.SLOW)]
         public void MultiSelectIndex()
         {
+            InputsPage.Go();
+
             I.Select(2).From(InputsPage.MultiSelectControlSelector)
              .Assert
                 .Text("Manitoba").In(InputsPage.MultiSelectControlSelector);
@@ -106,6 +114,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.VERYSLOW)]
         public void MultiSelectText()
         {
+            InputsPage.Go();
+
             I.Select("Manitoba").From(InputsPage.MultiSelectControlSelector)
              .Assert
                 .Value("MB").In(InputsPage.MultiSelectControlSelector);
@@ -131,6 +141,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.SLOW)]
         public void MultiSelectClearOptionsBetweenSelections()
         {
+            InputsPage.Go();
+
             I.Select(Option.Value, "QC", "MB").From(InputsPage.MultiSelectControlSelector)
              .Assert.Text("Québec").In(InputsPage.MultiSelectControlSelector);
 

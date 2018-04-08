@@ -9,16 +9,13 @@ namespace FluentAutomation.Tests.Asserts
 {
     public class AttributeTests : AssertBaseTest
     {
-        public AttributeTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
         [Test]
         [Category(Category.VERYSLOW)]
         public void TestAttributes()
         {
+            InputsPage.Go();
+
             var configWaitUntilTimeout = FluentSettings.Current.WaitUntilTimeout;
             Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(50));
 

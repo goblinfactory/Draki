@@ -8,16 +8,13 @@ namespace FluentAutomation.Tests.Asserts
 {
     public class CountTests : AssertBaseTest
     {
-        public CountTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
         [Test]
         [Category(Category.SLOW)]
         public void CountElements()
         {
+            InputsPage.Go();
+
             I.Assert
              .Count(0).Not.Of("div")
              .Count(0).Not.Of(I.Find("div"))

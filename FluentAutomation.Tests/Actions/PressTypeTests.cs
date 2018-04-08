@@ -8,15 +8,12 @@ namespace FluentAutomation.Tests.Actions
 {
     public class PressTypeTests : BaseTest
     {
-        public PressTypeTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
         [Test]
         public void PressType()
         {
+            InputsPage.Go();
+
             I.Focus(InputsPage.TextControlSelector)
              .Press("{TAB}")
              .Type("wat")

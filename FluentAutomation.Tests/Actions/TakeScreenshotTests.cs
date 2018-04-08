@@ -21,13 +21,13 @@ namespace FluentAutomation.Tests.Actions
         {
             tempPath = Path.GetTempPath();
             Config.ScreenshotPath(tempPath);
-
-            TextPage.Go();
         }
 
         [Test]
         public void TakeScreenshot()
         {
+            TextPage.Go();
+
             var screenshotName = string.Format(CultureInfo.CurrentCulture, "TakeScreenshot_{0}", DateTimeOffset.Now.Date.ToFileTime());
             var filepath = this.tempPath + screenshotName + ".png";
 
@@ -49,6 +49,7 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.SLOW)]
         public void ScreenshotOnFailedAction()
         {
+            TextPage.Go();
 
             var c = Config.Settings.ScreenshotOnFailedAction;
             try
@@ -84,6 +85,8 @@ namespace FluentAutomation.Tests.Actions
         [Category(Category.SLOW)]
         public void ScreenshotOnFailedAssert()
         {
+            TextPage.Go();
+
             var c = Config.Settings.ScreenshotOnFailedAssert;
             Config.ScreenshotOnFailedAssert(true);
             try
@@ -108,26 +111,5 @@ namespace FluentAutomation.Tests.Actions
             }
 
         }
-
-        /*
-        [Test]
-        public void ScreenshotOnFailedExpect()
-        {
-            var c = Config.Settings.ScreenshotOnFailedExpect;
-            Config.ScreenshotOnFailedExpect(true);
-            
-            I.Expect.True(() => false);
-
-            var screenshotName = string.Format(CultureInfo.CurrentCulture, "ExpectFailed_{0}", DateTimeOffset.Now.Date.ToFileTime());
-            var filepath = this.tempPath + screenshotName + ".png";
-            I.Assert
-                .True(() => File.Exists(filepath))
-                .True(() => new FileInfo(filepath).Length > 0);
-
-            File.Delete(filepath);
-
-            Config.ScreenshotOnFailedExpect(c);
-        }
-        */
     }
 }

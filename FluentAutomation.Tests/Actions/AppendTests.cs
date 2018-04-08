@@ -5,16 +5,13 @@ namespace FluentAutomation.Tests.Actions
 {
     public class AppendTests : BaseTest
     {
-        public AppendTests()
-            : base()
-        {
-            InputsPage.Go();
-        }
 
         [Test]
         [Category(Category.SLOW)]
         public void AppendTextToValidInput()
         {
+            InputsPage.Go();
+
             // set the base string so we know what the appended result will be
             I.Enter("BaseString").In(InputsPage.TextControlSelector);
             I.Enter("BaseString").In(InputsPage.TextareaControlSelector);
@@ -41,6 +38,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void AppendTextToInvalidInputUsingSelector()
         {
+            InputsPage.Go();
+
             var exception = Assert.Throws<FluentElementNotFoundException>(() => I.Append("Test String").To("#text-control-fake"));
             Assert.True(exception.Message.Contains("Unable to find"));
         }
@@ -48,6 +47,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void AppendTextToSelect()
         {
+            InputsPage.Go();
+
             // Append cannot be used on non-text elements
             var exception = Assert.Throws<FluentException>(() => I.Append("QA").To(InputsPage.SelectControlSelector));
             Assert.True(exception.Message.Contains("only supported"));

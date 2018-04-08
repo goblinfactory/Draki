@@ -5,16 +5,13 @@ namespace FluentAutomation.Tests.Actions
 {
     public class DragTests : BaseTest
     {
-        public DragTests()
-            : base()
-        {
-            DragPage.Go();
-        }
 
         [Test]
         [Category(Category.SLOW)]
         public void DragAndDropBySelector()
         {
+            DragPage.Go();
+
             var peg = I.Find(DragPage.Peg1).Element;
             var hole1 = I.Find(DragPage.Hole1).Element;
             var hole2 = I.Find(DragPage.Hole2).Element;
