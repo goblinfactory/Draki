@@ -9,14 +9,12 @@ namespace FluentAutomation.Tests.Actions
 {
     public class SwitchTests : BaseTest
     {
-        public SwitchTests()
-        {
-            SwitchPage.Go();
-        }
 
         [Test]
         public void FrameSwitchTest()
         {
+            SwitchPage.Go();
+
             I.Switch.Frame(SwitchPage.IFrameSelector)
              .Assert.Text("Alerts Testbed").In("h2");
 
@@ -31,6 +29,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void FrameSwitchToNonexistantFrameThrowsTest()
         {
+            SwitchPage.Go();
+
             I.Switch.Frame(SwitchPage.IFrameSelector)
              .Assert.Text("Alerts Testbed").In("h2");
 
@@ -44,6 +44,8 @@ namespace FluentAutomation.Tests.Actions
         [Test]
         public void WindowSwitchTest()
         {
+            SwitchPage.Go();
+
             I.Click(SwitchPage.NewWindowSelector);
 
             I.Switch.Window("Inputs - FluentAutomation Testbed")
