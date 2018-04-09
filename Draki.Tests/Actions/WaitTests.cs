@@ -25,6 +25,7 @@ namespace Draki.Tests.Actions
 
         [Test]
         [Category(Category.VERYSLOW)]
+        [Category(Category.FLAKEY)]
         public void WaitUntil_A()
         {
             var waitUntilTimeout = FluentSettings.Current.WaitUntilTimeout;
