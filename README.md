@@ -131,7 +131,7 @@ public class AccountTests : MyTestBase
 
 #### 6) If you want you can read the temporary docs
 
-
+[temporary API documentation for Draki (FluentAutomation)](/Docs/)
 
 #### WOOT! your're done early! Now go home early and fire up the barbi!
 
