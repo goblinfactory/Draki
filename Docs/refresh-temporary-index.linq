@@ -50,5 +50,5 @@ void WriteFooter(StringBuilder sb) {
 
 void RenderLink(StringBuilder sb, string name, string markdownfile, string description)
 {
-	sb.AppendLine($"[{name}](/v3/{markdownfile})|{description}");
+	sb.AppendLine($"[{name}](/Docs/v3/{markdownfile})|{description}");
 }
