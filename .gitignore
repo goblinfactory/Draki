@@ -56,8 +56,5 @@ pvc-packages
 node_modules
 Docs/node_modules
 *-wrapped.html
-.vs/FluentAutomation/v15/Server/sqlite3/*
-.vs/config/applicationhost.config
-.vs/config/applicationhost.config
-.vs/config/applicationhost.config
 FluentAutomation.SeleniumWebDriver/3rdPartyLib/chromedriver.exe
+.vs/*
