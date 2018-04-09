@@ -39,6 +39,8 @@ outstanding balance | appropriate style | should see warning | should see reason
 
 > install package draki 
 
+***Draki package is not currently available yet!*** I'm busy working on this ...this very instant. If you want to be notified as soon as the package is pushed to nuget and available to test drive, please ping me a message on twitter [@snowcode](https://www.twitter.com/snowcode)
+
 #### 3) Initialising the the test engine
 
 ```csharp
@@ -126,6 +128,10 @@ public class AccountTests : MyTestBase
     }
 }
 ```
+
+#### 6) If you want you can read the temporary docs
+
+
 
 #### WOOT! your're done early! Now go home early and fire up the barbi!
 

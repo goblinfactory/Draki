@@ -15,14 +15,16 @@ void CreateDocs(string filename)
 	foreach(var md in dir.GetFiles("*.md").Where(f => !f.Name.StartsWith("temporary")))
 	{
 		var description = GetTitle(md);
-		var name = md.Name.Substring(0,md.Name.Length-3);
+		var name = md.Name.Substring(0, md.Name.Length-3);
 		var file = md.Name;
 		RenderLink(sb, name, file, description);
 	}
 	WriteFooter(sb);
-	var dest = Path.Combine(root, filename);
+	var dest = Path.Combine(new FileInfo(Util.CurrentQuery.FilePath).Directory.FullName, filename);
 	File.WriteAllText(dest, sb.ToString());
 	Console.WriteLine(sb.ToString());
+	Console.WriteLine();
+	Console.WriteLine("File written to " + dest);
 }
 
 string GetTitle(FileInfo file)
@@ -48,5 +50,5 @@ void WriteFooter(StringBuilder sb) {
 
 void RenderLink(StringBuilder sb, string name, string markdownfile, string description)
 {
-	sb.AppendLine($"[{name}]({markdownfile})|{description}");
+	sb.AppendLine($"v3/[{name}]({markdownfile})|{description}");
 }
