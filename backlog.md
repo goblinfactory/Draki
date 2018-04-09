@@ -7,6 +7,8 @@
   - do we need Expressions?
   - do we need the whole API?
 * change the default for Text entry to be without events, this will make the tests more robust and faster. If you want to specifically trigger the events, then the default should require you to specify WithEvents() or something like that. Rationale is to stay away from SendKeys that can send keystrokes to windows outside of the browser. This is brittle and when it breaks it's NAAASTY!
+* setup uservoice for the project so that we can start seeing who is using the library.
+* also setup a gitter for the project, seed gitter with some mates I can convince to try it!
 
 ### Housekeeping
 
