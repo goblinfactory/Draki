@@ -1,6 +1,7 @@
 Copyright to portions of this project where some of the source code has been copied, 
 derived or modified from, are under The MIT License (MIT) 
-Copyright (c) 2013 Brandon Stirnaman, see [FLUENTAUTOMATION-LICENCE.md](FLUENTAUTOMATION-LICENCE.md)
+Copyright (c) 2013 Brandon Stirnaman, see [FLUENTAUTOMATION-LICENCE.md](FLUENTAUTOMATION-LICENCE.md) 
+Original project this project is based off here : [https://github.com/stirno/FluentAutomation](https://github.com/stirno/FluentAutomation)
 
 #### MIT License
 

@@ -12,7 +12,7 @@ $ver = $url.Split($seperator, [System.StringSplitOptions]::RemoveEmptyEntries)[1
 $file = "https://chromedriver.storage.googleapis.com/" + $ver + "chromedriver_win32.zip"
 write-host "downloading $file"
 
-$dir = "FluentAutomation.SeleniumWebDriver\3rdPartyLib"
+$dir = "Draki.SeleniumWebDriver\3rdPartyLib"
 $zip = "$dir\chromedriver_win32.zip"
 $zipFolder = $dir + "\chromedriver"
 Invoke-WebRequest $file -OutFile $zip

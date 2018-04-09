@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FluentAutomation.TestApplication.Controllers
+namespace Draki.TestApplication.Controllers
 {
     public class TextController : Controller
     {

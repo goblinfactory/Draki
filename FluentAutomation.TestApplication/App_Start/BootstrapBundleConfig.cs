@@ -1,8 +1,8 @@
 using System.Web.Optimization;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(FluentAutomation.TestApplication.App_Start.BootstrapBundleConfig), "RegisterBundles")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Draki.TestApplication.App_Start.BootstrapBundleConfig), "RegisterBundles")]
 
-namespace FluentAutomation.TestApplication.App_Start
+namespace Draki.TestApplication.App_Start
 {
 	public class BootstrapBundleConfig
 	{

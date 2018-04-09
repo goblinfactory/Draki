@@ -145,11 +145,19 @@ some good housekeeping below...
 1. Running tests against uniquely created users means you don't have to worry about parallel tests interfering with each other.
 1. It's ok to open a page that may have data that's changing as a result of other tests, as long as you consider this and what you're actually testing, the 'xpath selectors' your're executing are working on DOM elements that you know will be consistent.
 
-#### 6) Bake in a good habit of always checking your preconditions using `I.Expect`
+#### 7) Bake in a good habit of always checking your preconditions using `I.Expect`
 
 Remember to always use positive confirmation to check your precondiions using the `I.Expect` fluid syntax
 
 - any precoditions that fail will throw an `Assert.Inconclusive` and not a `Fail`, so that you can quickly hone in on the actual code changes to your system that has caused the tests to fail, instead of suddenly seeing hundreds of tests fail.
+
+#### 8) Now that you're familiar with the basics it's time to kick this party up a notch!
+
+Run your tests simultaneously in both Firefox and Chrome and IE and record screenshots of any errors along the way:
+
+```csharp
+// Multi-provider sample coming soon...
+```
 
 ### Building the solution and running the unit tests
 
