@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAutomation.Core", "FluentAutomation\FluentAutomation.Core.csproj", "{07D8DE59-3DEB-4722-B093-6FCC0B0F7FFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draki.Core", "FluentAutomation\Draki.Core.csproj", "{07D8DE59-3DEB-4722-B093-6FCC0B0F7FFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAutomation.SeleniumWebDriver", "FluentAutomation.SeleniumWebDriver\FluentAutomation.SeleniumWebDriver.csproj", "{508E97D5-21EF-41DC-8FD1-A0EAC0A637A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draki.SeleniumWebDriver", "FluentAutomation.SeleniumWebDriver\Draki.SeleniumWebDriver.csproj", "{508E97D5-21EF-41DC-8FD1-A0EAC0A637A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAutomation.Tests", "FluentAutomation.Tests\FluentAutomation.Tests.csproj", "{740E43BA-EC49-4E9E-99C8-10E53EF7D0AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draki.Tests", "FluentAutomation.Tests\Draki.Tests.csproj", "{740E43BA-EC49-4E9E-99C8-10E53EF7D0AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{36898A24-FCC7-4E89-9E5E-C050F4A4CDE2}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAF96386-9D96-456C-AFAE-8385E1B61CAB}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		backlog.md = backlog.md
 		FLUENTAUTOMATION-LICENSE.md = FLUENTAUTOMATION-LICENSE.md
 		LICENSE.md = LICENSE.md
 		README.md = README.md

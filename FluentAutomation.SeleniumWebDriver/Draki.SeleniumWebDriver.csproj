@@ -71,9 +71,9 @@
     <Compile Include="Wrappers\IEDriver.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FluentAutomation\FluentAutomation.Core.csproj">
+    <ProjectReference Include="..\FluentAutomation\Draki.Core.csproj">
       <Project>{07D8DE59-3DEB-4722-B093-6FCC0B0F7FFF}</Project>
-      <Name>FluentAutomation.Core</Name>
+      <Name>Draki.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

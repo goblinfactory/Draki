@@ -2,7 +2,7 @@ Copyright to portions of this project where some of the source code has been cop
 derived or modified from, are under The MIT License (MIT) 
 Copyright (c) 2013 Brandon Stirnaman, see [FLUENTAUTOMATION-LICENCE.md](FLUENTAUTOMATION-LICENCE.md)
 
-MIT License
+#### MIT License
 
 Copyright (c) 2018 Alan Hemmings
 
@@ -23,3 +23,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+#### Additional licences
+
+Library | Licence | Licence file
+--- | --- | ---
+Draki | MIT | this file 
+TinyIoc | AS-IS | [LICENCE-TINYIOC.md](LICENCE-TINYIOC.md)
+FluentAutomation | MIT | [LICENCE-FLUENTAUTOMATION.md](LICENSE-FLUENTAUTOMATION.md)
