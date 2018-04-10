@@ -1,3 +1,9 @@
+
+
+		# UPDATE 10/4/18 Just seen that Visual studio now automatically creates the nuget package, I can possibly remove this script.
+		# Will keep this here until I've time to confirm the package is exactly as we need it
+		# and that when we use msbuild from command line the nuget package get's created. we might still need this with appveyor.
+
 function MAKE_NUGET($projectPath, $dest) {  
 
 	# -------------------------------------------------------------------
