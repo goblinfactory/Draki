@@ -49,8 +49,9 @@ public class RunOnceBeforeAllTests
 {
     [OneTimeSetUp]
     public void Setup(){
-        DrakiConfig.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
-        DrakiConfig.BootstrapChrome();
+        FluentSession.EnableStickySession();
+        Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
+        SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome);
     }
 }
 ```

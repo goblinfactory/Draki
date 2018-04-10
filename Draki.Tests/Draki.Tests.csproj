@@ -102,13 +102,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Draki.Core\Draki.Core.csproj">
+      <Project>{07d8de59-3deb-4722-b093-6fcc0b0f7fff}</Project>
+      <Name>Draki.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Draki.SeleniumWebDriver\Draki.SeleniumWebDriver.csproj">
       <Project>{508e97d5-21ef-41dc-8fd1-a0eac0a637a4}</Project>
       <Name>Draki.SeleniumWebDriver</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Draki\Draki.Core.csproj">
-      <Project>{07d8de59-3deb-4722-b093-6fcc0b0f7fff}</Project>
-      <Name>Draki.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

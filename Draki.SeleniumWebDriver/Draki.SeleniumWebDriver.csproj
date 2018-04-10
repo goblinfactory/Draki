@@ -7,8 +7,8 @@
     <ProjectGuid>{508E97D5-21EF-41DC-8FD1-A0EAC0A637A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FluentAutomation.SeleniumWebDriver</RootNamespace>
-    <AssemblyName>FluentAutomation.SeleniumWebDriver</AssemblyName>
+    <RootNamespace>Draki.SeleniumWebDriver</RootNamespace>
+    <AssemblyName>Draki.SeleniumWebDriver</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\FluentAutomation.SeleniumWebDriver.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Draki.SeleniumWebDriver.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -56,7 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Draki\Properties\AssemblyGlobal.cs">
+    <Compile Include="..\Draki.Core\Properties\AssemblyGlobal.cs">
       <Link>Properties\AssemblyGlobal.cs</Link>
     </Compile>
     <Compile Include="CommandProvider.cs" />
@@ -71,12 +71,6 @@
     <Compile Include="Wrappers\IEDriver.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Draki\Draki.Core.csproj">
-      <Project>{07D8DE59-3DEB-4722-B093-6FCC0B0F7FFF}</Project>
-      <Name>Draki.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Draki.SeleniumWebDriver.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -89,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="3rdPartyLib\phantomjs.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Draki.Core\Draki.Core.csproj">
+      <Project>{07d8de59-3deb-4722-b093-6fcc0b0f7fff}</Project>
+      <Name>Draki.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
