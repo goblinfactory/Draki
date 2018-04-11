@@ -1,1 +1,0 @@
-<Playlist Version="1.0"><Add Test="FluentAutomation.Tests.Actions.SwitchTests.FrameSwitchToNonexistantFrameThrowsTest" /><Add Test="FluentAutomation.Tests.Actions.SwitchTests.FrameSwitchTest" /></Playlist>

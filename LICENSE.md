@@ -32,3 +32,7 @@ Library | Licence | Licence file
 Draki | MIT | this file 
 TinyIoc | AS-IS | [LICENCE-TINYIOC.md](LICENCE-TINYIOC.md)
 FluentAutomation | MIT | [LICENCE-FLUENTAUTOMATION.md](LICENSE-FLUENTAUTOMATION.md)
+PhantomJs | ? to check | need to review.
+Selenium ?? | ? to check | need to review.
+
+TODO : still need to do a code review and add in links to additional licences that are not shown.
