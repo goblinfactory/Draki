@@ -56,5 +56,5 @@ pvc-packages
 node_modules
 Docs/node_modules
 *-wrapped.html
-FluentAutomation.SeleniumWebDriver/3rdPartyLib/chromedriver.exe
+Draki.SeleniumWebDriver/3rdPartyLib/chromedriver.exe
 .vs

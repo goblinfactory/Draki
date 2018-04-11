@@ -13,12 +13,12 @@ using Draki.Wrappers;
 namespace Draki
 {
     /// <summary>
-    /// Selenium WebDriver FluentAutomation Provider
+    /// Selenium WebDriver Draki Provider
     /// </summary>
     public class SeleniumWebDriver
     {
         /// <summary>
-        /// Supported browsers for the FluentAutomation Selenium provider.
+        /// Supported browsers for the Draki Selenium provider.
         /// </summary>
         public enum Browser
         {

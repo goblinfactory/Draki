@@ -50,7 +50,7 @@ namespace Draki.Tests.Actions
 
             I.Click(SwitchPage.NewWindowSelector);
 
-            I.Switch.Window("Inputs - FluentAutomation Testbed")
+            I.Switch.Window("Inputs - Draki Testbed")
              .Assert.Text("Input Controls Testbed").In("h2");
 
             I.Switch.Window()

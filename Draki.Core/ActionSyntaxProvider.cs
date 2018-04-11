@@ -71,7 +71,7 @@ namespace Draki
             if (alertAccessor.Field != AlertField.OKButton && alertAccessor.Field != AlertField.CancelButton)
             {
                 this.Click(Alert.Cancel);
-                throw new FluentException("FluentAutomation only supports clicking the OK or Cancel buttons of an alert/prompt.");
+                throw new FluentException("Draki only supports clicking the OK or Cancel buttons of an alert/prompt.");
             }
 
             this.commandProvider.AlertClick(alertAccessor);
@@ -413,7 +413,7 @@ namespace Draki
                 if (accessor.Field != AlertField.Input)
                 {
                     this.syntaxProvider.commandProvider.AlertClick(Alert.Cancel);
-                    throw new FluentException("FluentAutomation only supports entering text in text input of a prompt.");
+                    throw new FluentException("Draki only supports entering text in text input of a prompt.");
                 }
 
                 this.syntaxProvider.commandProvider.AlertEnterText(text);

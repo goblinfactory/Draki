@@ -7,6 +7,8 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <description>$description$</description>
+    <summary>Simple and rapid critical path smoke testing for web apps - Make it so easy to write a functional smoke test for your web application that there's no excuse not to!</summary>
+    <licenseUrl>https://github.com/goblinfactory/Draki/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/goblinfactory/draki</projectUrl>
     <releaseNotes>https://github.com/goblinfactory/draki</releaseNotes>
     <copyright>$copyright$</copyright>

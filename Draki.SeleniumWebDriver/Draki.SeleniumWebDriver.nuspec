@@ -7,13 +7,14 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <description>$description$</description>
-    <projectUrl>http://fluent.stirno.com/</projectUrl>
-    <releaseNotes>New docs at http://fluent.stirno.com/</releaseNotes>
+    <licenseUrl>https://github.com/goblinfactory/Draki/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/goblinfactory/draki</projectUrl>
+    <releaseNotes>https://github.com/goblinfactory/draki</releaseNotes>
     <copyright>$copyright$</copyright>
     <language>en-US</language>
     <tags>PhantomJS Phantom WatiN Selenium Fluent Automation API</tags>
     <dependencies>
-        <dependency id="FluentAutomation.Core" version="$version$" />
+        <dependency id="Draki.Core" version="$version$" />
     </dependencies>
   </metadata>
 </package>

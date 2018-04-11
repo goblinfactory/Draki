@@ -298,7 +298,7 @@ namespace Draki.Interfaces
 
         /// <summary>
         /// Expects - Fluent's passive expect functionality. Defaults to Assert mode (fail on exception) for backwards compatibility. This will change
-        /// in a future release. Can be set to passively expect by setting FluentAutomation.Settings.ExpectIsAssert = false
+        /// in a future release. Can be set to passively expect by setting Draki.Settings.ExpectIsAssert = false
         /// </summary>
         AssertSyntaxProvider Expect { get; }
 

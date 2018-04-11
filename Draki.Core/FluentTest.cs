@@ -9,7 +9,7 @@ using Draki.Interfaces;
 namespace Draki
 {
     /// <summary>
-    /// FluentTest - To be extended by tests targeting FluentAutomation. In the constructor, a user should call an appropriate bootstrap function from a FluentAutomation Provider.
+    /// FluentTest - To be extended by tests targeting Draki. In the constructor, a user should call an appropriate bootstrap function from a Draki Provider.
     /// </summary>
     public class FluentTest : BaseFluentTest
     {
