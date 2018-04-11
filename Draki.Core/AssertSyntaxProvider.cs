@@ -552,7 +552,7 @@ namespace Draki
             public AssertSyntaxProvider In(Alert accessor)
             {
                 if (accessor != Alert.Message)
-                    throw new FluentException("FluentAutomation only supports checking the message in an alerts or prompts.");
+                    throw new FluentException("Draki only supports checking the message in an alerts or prompts.");
 
                 if (this.matchFunc == null)
                 {
@@ -707,7 +707,7 @@ namespace Draki
                 if (accessor != Alert.Message)
                 {
                     this.commandProvider.AlertClick(Alert.Cancel);
-                    throw new FluentException("FluentAutomation only supports checking the message in an alerts or prompts.");
+                    throw new FluentException("Draki only supports checking the message in an alerts or prompts.");
                 }
 
                 if (this.matchFunc == null)
