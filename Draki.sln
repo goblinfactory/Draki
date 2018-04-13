@@ -26,6 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draki.Core", "Draki.Core\Dr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build.scripts", "build.scripts", "{D2A0310B-E0C8-4233-BA18-ACC213A34FEA}"
 	ProjectSection(SolutionItems) = preProject
+		_copy_nugets.ps1 = _copy_nugets.ps1
 		_make-nuget.ps1 = _make-nuget.ps1
 		_start-site.ps1 = _start-site.ps1
 		_update-chromedriver.ps1 = _update-chromedriver.ps1
