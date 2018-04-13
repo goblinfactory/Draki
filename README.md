@@ -37,15 +37,20 @@ outstanding balance | appropriate style | should see warning | should see reason
 
 
 
-#### 2) install draki test package in your test project
+#### 2) install draki test package in your test project (you need to run both commands below)
 
-> install package draki 
-
-***Draki package is not currently available yet!*** I'm busy working on this ...this very instant. If you want to be notified as soon as the package is pushed to nuget and available to test drive, please ping me a message on twitter [@snowcode](https://www.twitter.com/snowcode)
+```powershell
+ > install package draki.core
+ > install-package draki.seleniumwebdriver
+```
 
 #### 3) Initialising the test engine
 
 ```csharp
+
+using Draki;
+using NUnit.Framework;
+
 [SetUpFixture]
 public class RunOnceBeforeAllTests
 {
