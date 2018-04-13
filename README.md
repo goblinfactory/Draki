@@ -167,6 +167,15 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 // Multi-provider sample coming soon...
 ```
 
+### Upgrading from an earlier version of Draki
+
+1. manually delete the existing draki packages from your solution package folders
+1. delete the package references from each project's `packages.config` file.
+1. re-install the Draki packages 
+   `install-package draki.core`
+   `install-package draki.seleniumwebdriver`
+1. rebuild your sln or project and then manually check in your `bin\debug` or `bin\release` folder that the version of `Draki` assemblies are correct and the latest. If they are not, then your nuget settings in visual studio have fetch a cached package somewhere. Download the package manually from nuget and use the `-source` option e.g. `install-package draki.core -source c:\mytemp\Draki.Core.0.1.0.3.nupkg` to install `Draki`. do this for both `draki.core` and `draki.seleniumwebdriver`.
+
 ### Building the solution and running the unit tests
 
 1. run `update-chrome-driver.ps1` to download and unpack (unzip) the latest chrome driver.
