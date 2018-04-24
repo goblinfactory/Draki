@@ -100,7 +100,7 @@ public class MyTestBase : FluentTest
 
 #### 5) Write some tests that test the system as described step by step in your requirements
 
-This is very rough pseudo code, but I trust you get the GIST! If you have any questions, please contact me on twitter [@snowcode](https://twitter.com/snowcode)
+If you have any questions, please contact me on twitter [@drakiSelenium](https://twitter.com/drakiSelenium)
 
 ```csharp
 
