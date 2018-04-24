@@ -4,6 +4,18 @@
 
 <h2>Switch Testbed</h2>
 
-<a id="new-window" href="/Inputs" target="_blank">Go to Inputs (in new window)</a>
+<script>
+
+    function popUp(url) {
+        var features = 'height=440,width=400,location=0,menubar=0,scrollbars=1,toolbar=0,resizable=0,left=300,top=200';
+        newwindow = window.open(url, 'new popup window name', features, false);
+        if (window.focus) { newwindow.focus() }
+        return false;
+    }
+    
+</script>
+
+<a id="new-window" class="btn btn-default" href="/Inputs" target="_blank">Go to Inputs (in new window)</a>
+<a id="new-popup" class="btn btn-default" href="#" onclick="popUp('/Inputs')">Go to Inputs (in popup)</a>
 <br /><br />
 <iframe src="/Alerts" width="500" height="500"></iframe>

@@ -43,15 +43,16 @@ namespace Draki.Tests.Actions
 
 
         [Test]
-        [Category(Category.VERYSLOW)]
+        [Category(Category.SLOW)]
         public void WindowSwitchTest()
         {
             SwitchPage.Go();
 
             I.Click(SwitchPage.NewWindowSelector);
 
-            I.Switch.Window("Inputs - Draki Testbed")
-             .Assert.Text("Input Controls Testbed").In("h2");
+            I.Switch.Window("Inputs - FluentAutomation Testbed");
+
+            I.Assert.Text("Input Controls Testbed").In("h2");
 
             I.Switch.Window()
              .Assert.Text("Switch Testbed").In("h2");
@@ -61,8 +62,54 @@ namespace Draki.Tests.Actions
 
             I.Switch.Window()
              .Assert.Text("Switch Testbed").In("h2");
+        }
 
+        [Test]
+        [Category(Category.SLOW)]
+        public void WindowSwitchToTitleContainingTest()
+        {
+            SwitchPage.Go();
+
+            I.Click(SwitchPage.NewWindowSelector);
+
+            I.Switch.Window("Inputs - Flue");
+            I.Assert.Text("Input Controls Testbed").In("h2");
+        }
+
+        [Test]
+        [Category(Category.SLOW)]
+        public void WindowSwitchToUrlContainingTest()
+        {
+            SwitchPage.Go();
+
+            I.Click(SwitchPage.NewWindowSelector);
+
+            I.Switch.Window("/Inp");
+            I.Assert.Text("Input Controls Testbed").In("h2");
+        }
+
+        [Test]
+        [Category(Category.VERYSLOW)]
+        public void WindowSwitchToNonExistentThrowsTest()
+        {
+            SwitchPage.Go();
             Assert.Throws<FluentException>(() => I.Switch.Window("non existent window"));
+        }
+
+        [Test]
+        public void SwitchToPopupTest()
+        {
+            SwitchPage.Go();
+
+            I.Expect.Text("Switch Testbed").In("h2");
+            // open pop up
+            I.Click(SwitchPage.new_popup);
+
+            I.Switch.Window("Inputs").Expect.Text("Inputs - FluentAutomation Testbed").In("head > title");
+            I.Enter("can you see me").In(InputsPage.TextControlSelector);
+
+            // switch back to primary window
+            I.Switch.Window().Expect.Text("Switch Testbed").In("h2");
         }
     }
 }

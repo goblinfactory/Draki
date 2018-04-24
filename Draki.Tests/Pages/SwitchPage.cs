@@ -16,6 +16,8 @@ namespace Draki.Tests.Pages
 
         public string NewWindowSelector = "#new-window";
 
+        public string new_popup = "#new-popup";
+
         public string IFrameSelector = "iframe";
     }
 }

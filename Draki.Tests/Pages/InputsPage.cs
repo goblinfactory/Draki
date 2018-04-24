@@ -23,6 +23,9 @@ namespace Draki.Tests.Pages
 
         public string ButtonControlSelector = "#button-control";
 
+        public string LinkButtonControlSelector = "#linkbutton-control";
+        public string LinkButtonJavascriptControlSelector = "#linkjavascript-control";
+
         public string InputButtonControlSelector = "#input-button-control";
 
         public string TextChangedTextSelector = "#text-control-changed";

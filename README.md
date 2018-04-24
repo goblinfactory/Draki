@@ -171,6 +171,11 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 
 1. manually delete the existing draki packages from your solution package folders
 1. delete the package references from each project's `packages.config` file.
+1. delete the following packages references as well, whichever versions they are
+```xml
+      <package id="Selenium.Support" version="2.41.0" targetFramework="net45" />`
+       <package id="Selenium.WebDriver" version="2.41.0" targetFramework="net45" />
+```
 1. re-install the Draki packages 
    `install-package draki.core`
    `install-package draki.seleniumwebdriver`

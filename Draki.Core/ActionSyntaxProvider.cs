@@ -236,7 +236,7 @@ namespace Draki
             }
 
             /// <summary>
-            /// Switch to a window by name or URL (can be relative such as /about -- matches on the end of the URL)
+            /// Switch to a window by name containing or URL (can be relative such as /about -- matches on the end of the URL)
             /// </summary>
             /// <param name="windowName"></param>
             public IActionSyntaxProvider Window(string windowName)
@@ -618,6 +618,7 @@ namespace Draki
             this.isDisposed = true;
             this.commandProvider.Dispose();
         }
+
     }
 
     /// <summary>

@@ -2,21 +2,35 @@
 using Draki.Exceptions;
 using NUnit.Framework;
 
-
 namespace Draki.Tests.Actions
 {
     public class ClickTests : BaseTest
     {
         [Test]
-        [Category(Category.SLOW)]
+        [Category(Category.FLAKEY)]
         public void LeftClick()
         {
+            // either flakey or has side effects or is impacted by side effects!
             InputsPage.Go();
             I.Click(InputsPage.ButtonControlSelector)
                 .WaitUntil(()=> I.Expect.Text("Button Clicked").In(InputsPage.ButtonClickedTextSelector));
 
             I.Click(InputsPage.InputButtonControlSelector)
                 .WaitUntil(()=> I.Expect.Text("Input Button Clicked").In(InputsPage.ButtonClickedTextSelector));
+        }
+
+        [Test]
+        [Category(Category.SLOW)]
+        [Category(Category.FLAKEY)]
+        public void LinkClick()
+        {
+            InputsPage.Go();
+            I.Click(InputsPage.LinkButtonControlSelector)
+                .WaitUntil(() => I.Expect.Text("If you see me, then the click link worked").In("#seeme"));
+            InputsPage.Go();
+            I.Click(InputsPage.LinkButtonJavascriptControlSelector)
+                .WaitUntil(() => I.Expect.Text("If you see me, then the click link worked").In("#seeme"));
+
         }
 
         [Test]

@@ -105,9 +105,18 @@ namespace Draki
                 }
             }
             catch (UnhandledAlertException) { }
+            // added catch InvalidOperationException catch below to fix a serious problem; needs a functional test to prove this solves certain issues
+            // was getting the following error when trying to switch back from a popup modal in Goblinfactory
+            // possibly because the modal changes window size and there are alerts, ...however I was unable to create a simple
+            // test to reproduce the behavior, and I needed an urgent fix. Must come back to this to work out what was really needed and exactly why?
+            // -----------
+            // unknown error: unhandled inspector error: { "code":-32000,"message":"No target with given id"}
+            // (Session info: chrome = 65.0.3325.181)
+            // (Driver info: chromedriver = 2.37.544315(730aa6a5fdba159ac9f4c1e8cbc59bf1b5ce12b7),platform = Windows NT 10.0.16299 x86_64)
+            catch (InvalidOperationException) {}
 
             this.Settings = settings;
-
+            
             return this;
         }
 
@@ -488,8 +497,8 @@ namespace Draki
                 foreach (var windowHandle in this.webDriver.WindowHandles)
                 {
                     this.webDriver.SwitchTo().Window(windowHandle);
-
-                    if (this.webDriver.Title == windowName || this.webDriver.Url.EndsWith(windowName))
+                    var title = this.webDriver.Title;
+                    if (title == windowName || this.webDriver.Url.Contains(windowName) || title.Contains(windowName))
                     {
                         matchFound = true;
                         break;

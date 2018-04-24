@@ -15,6 +15,12 @@ namespace Draki.Tests.Asserts
         {
             InputsPage.Go();
 
+            I.Assert.Count(1).Of("h2");
+            I.Expect.Count(1).Of("h2");
+
+            I.Assert.Count(8).Of("input");
+            I.Expect.Count(8).Of("input");
+
             I.Assert
              .Count(0).Not.Of("div")
              .Count(0).Not.Of(I.Find("div"))
