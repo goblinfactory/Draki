@@ -34,8 +34,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build.scripts", "build.scri
 		AppVeyor.yml = AppVeyor.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draki.TestBed.AspNetWebForms", "Draki.TestBed.AspNetWebForms\Draki.TestBed.AspNetWebForms.csproj", "{52498DA3-F5BF-45F0-AC68-D5C284C07C06}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,10 +56,6 @@ Global
 		{07D8DE59-3DEB-4722-B093-6FCC0B0F7FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07D8DE59-3DEB-4722-B093-6FCC0B0F7FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07D8DE59-3DEB-4722-B093-6FCC0B0F7FFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52498DA3-F5BF-45F0-AC68-D5C284C07C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52498DA3-F5BF-45F0-AC68-D5C284C07C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52498DA3-F5BF-45F0-AC68-D5C284C07C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52498DA3-F5BF-45F0-AC68-D5C284C07C06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
