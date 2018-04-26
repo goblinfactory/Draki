@@ -158,6 +158,7 @@
     <Content Include="Views\DragAndDrop\Index.cshtml" />
     <Content Include="Views\Switch\Index.cshtml" />
     <Content Include="Views\LinkTarget\Index.cshtml" />
+    <Content Include="Views\Inputs\Upload.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,6 +167,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\Uploads\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

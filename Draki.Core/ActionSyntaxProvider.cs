@@ -209,7 +209,8 @@ namespace Draki
 
         public IActionSyntaxProvider Upload(ElementProxy element, string fileName)
         {
-            return this.Upload(element, fileName);
+            this.commandProvider.UploadFile(element, fileName);
+            return this;
         }
 
         private SwitchSyntaxProvider switchProvider = null;

@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+
+## [0.2.1.0] - 2018-04-26
+
+### Fixed
+
+- CRITICAL FIX : Upload file `I.Upload(upload, file);` would crash selenium. (was calling recursively) fixed.
+
+### Added
+
+- `UploadTests.UploadFileTest()`
+
 ## [0.2.0.0] - 2018-04-24
 
 ### Added

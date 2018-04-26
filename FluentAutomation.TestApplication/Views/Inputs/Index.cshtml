@@ -5,176 +5,202 @@
 
 <h2>Input Controls Testbed</h2>
 
-<form action="/" onsubmit="setTimeout(function () { $('#button-clicked-text').text(''); }, 1500); return false" method="post" role="form">
-    <div class="form-group other-class">
-        <label for="text-control">Text Input</label>
-        <input id="text-control" class="form-control">
+<div class="form-group">
 
-        <div id="text-control-changed"></div>
-    </div>
-
-    <div class="form-group">
-        <label for="textarea-control">Text Area</label>
-        <textarea id="textarea-control" class="form-control"></textarea>
-    </div>
-
-    <div class="form-group">
-        <label for="select-control">Select</label>
-        <select id="select-control" class="form-control">
-            <option></option>
-            <option value="AB">Alberta</option>
-            <option value="BC">Colombie-Britannique</option>
-            <option value="MB">Manitoba</option>
-            <option value="NB">Nouveau-Brunswick</option>
-            <option value="NL">Terre-Neuve</option>
-            <option value="NS">Nouvelle-&#201;cosse</option>
-            <option value="NT">Territoire du Nord Ouest</option>
-            <option value="NU">Nunavut</option>
-            <option value="ON">Ontario</option>
-            <option value="PE">&#206;le du Prince &#201;douard</option>
-            <option value="QC">Québec</option>
-            <option value="SK">Saskatchewan</option>
-            <option value="YT">Yukon</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="multi-select-control">Multi Select</label>
-        <select id="multi-select-control" multiple class="form-control" size="13">
-            <option value="AB">Alberta</option>
-            <option value="BC">Colombie-Britannique</option>
-            <option value="MB">Manitoba</option>
-            <option value="NB">Nouveau-Brunswick</option>
-            <option value="NL">Terre-Neuve</option>
-            <option value="NS">Nouvelle-&#201;cosse</option>
-            <option value="NT">Territoire du Nord Ouest</option>
-            <option value="NU">Nunavut</option>
-            <option value="ON">Ontario</option>
-            <option value="PE">&#206;le du Prince &#201;douard</option>
-            <option value="QC">Québec</option>
-            <option value="SK">Saskatchewan</option>
-            <option value="YT">Yukon</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label>Buttons <small>On click, #button-clicked-text will change then after 1500ms it will be reset to blank</small></label>
-
-        <div class="form-group">
-            <button id="button-control" type="submit" value="Button" class="btn btn-default">Button</button>
-            <input id="input-button-control" type="button" class="btn btn-primary" value="Input Button" />
-        </div>
-
-        <div class="form-group">
-            <a id="linkbutton-control" href="/LinkTarget" class="btn btn-default">Link Button 1 (with href)</a>  
-            <a id="linkjavascript-control" href="javascript:window.location.href = 'LinkTarget';" class="btn btn-default">Link Button 2 (with javascript)</a>  
-        </div>
-
-        <div class="form-group">
-            <span id="button-clicked-text"></span>
-        </div>
-    </div>
-
-    <div id="hidden-div" style="display: none">Hidden</div>
-
-    <div class="form-group other-class">
-        <label for="text-email-control">Email Input</label>
-        <input id="text-email-control" type="email" class="form-control">
-    </div>
-
-    <div class="form-group other-class">
-        <label for="text-search-control">Search Input</label>
-        <input id="text-search-control" type="search" class="form-control">
-    </div>
-
-    <div class="form-group other-class">
-        <label for="text-url-control">URL Input</label>
-        <input id="text-url-control" type="url" class="form-control">
-    </div>
-
-    <div class="form-group other-class">
-        <label for="text-tel-control">Telephone Input</label>
-        <input id="text-tel-control" type="tel" class="form-control">
-    </div>
-
-    <div class="form-group other-class">
-        <label for="text-number-control">Number Input</label>
-        <input id="text-number-control" type="number" class="form-control">
-    </div>
-
-    <div class="form-group other-class">
-        <label for="text-password-control">Password Input</label>
-        <input id="text-password-control" type="password" class="form-control">
-    </div>
-</form>
-
-<script type="text/javascript">
-    $(function () {
-        var clickedText = $('#button-clicked-text');
-        $('#button-control')
-            .on('click', function (e) {
-                clickedText.text('Button Clicked');
-            })
-            .on('dblclick', function (e) {
-                clickedText.text('Button Double Clicked');
-            })
-            .on('mousedown', function (e) {
-                e.stopPropagation();
-                if (e.which == 3) {
-                    clickedText.text('Button Right Clicked');
-                }
-            });
-
-        $('#input-button-control')
-            .on('click', function () {
-                clickedText.text('Input Button Clicked');
-            })
-            .on('dblclick', function () {
-                clickedText.text('Input Button Double Clicked');
-            })
-            .on('mousedown', function (e) {
-                e.stopPropagation();
-                if (e.which == 3) {
-                    clickedText.text('Input Button Right Clicked');
-                }
-            });
-
-        var timeoutHandle = null;
-        $('#button-control, #input-button-control')
-            .on('mousedown', function () {
-                if (timeoutHandle != null)
-                    clearTimeout(timeoutHandle);
-
-                timeoutHandle = setTimeout(function () {
-                    clickedText.text('');
-                }, 1500);
-            })
-            .on('contextmenu', function () {
-                return false;
-            });
-
-        var tccTimeoutHandle = null;
-        $('#text-control')
-            .on('change', function () {
-                if (tccTimeoutHandle != null)
-                    clearTimeout(tccTimeoutHandle);
-
-                var tcc = $('#text-control-changed');
-                tcc.text('Changed');
-
-                tccTimeoutHandle = setTimeout(function () {
-                    tcc.text('');
-                }, 1500);
-            });
-    });
-</script>
-
-<style>
-    input:hover, button:hover, textarea:hover {
-        color: rgb(255, 0, 0) !important;
+    @using (Html.BeginForm("Upload", "Inputs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <label for="upload1">choose file (less than 10kb)</label>
+        <input type="file" name="file" id="upload1" class="form-control" />
+        <input type="submit" id="doUpload" value="Upload" />
     }
 
-    input:focus, button:focus, textarea:focus {
-        color: rgb(0, 0, 255) !important;
-    }
-</style>
+</div>
+    
+
+    <form action="/" onsubmit="setTimeout(function () { $('#button-clicked-text').text(''); }, 1500); return false" method="post" role="form">
+
+
+
+
+        <div class="form-group other-class">
+            <label for="text-control">Text Input</label>
+            <input id="text-control" class="form-control">
+
+            <div id="text-control-changed"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="textarea-control">Text Area</label>
+            <textarea id="textarea-control" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="select-control">Select</label>
+            <select id="select-control" class="form-control">
+                <option></option>
+                <option value="AB">Alberta</option>
+                <option value="BC">Colombie-Britannique</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">Nouveau-Brunswick</option>
+                <option value="NL">Terre-Neuve</option>
+                <option value="NS">Nouvelle-&#201;cosse</option>
+                <option value="NT">Territoire du Nord Ouest</option>
+                <option value="NU">Nunavut</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">&#206;le du Prince &#201;douard</option>
+                <option value="QC">Québec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="YT">Yukon</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="multi-select-control">Multi Select</label>
+            <select id="multi-select-control" multiple class="form-control" size="13">
+                <option value="AB">Alberta</option>
+                <option value="BC">Colombie-Britannique</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">Nouveau-Brunswick</option>
+                <option value="NL">Terre-Neuve</option>
+                <option value="NS">Nouvelle-&#201;cosse</option>
+                <option value="NT">Territoire du Nord Ouest</option>
+                <option value="NU">Nunavut</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">&#206;le du Prince &#201;douard</option>
+                <option value="QC">Québec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="YT">Yukon</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Buttons <small>On click, #button-clicked-text will change then after 1500ms it will be reset to blank</small></label>
+
+            <div class="form-group">
+                <button id="button-control" type="submit" value="Button" class="btn btn-default">Button</button>
+                <input id="input-button-control" type="button" class="btn btn-primary" value="Input Button" />
+            </div>
+
+            <div class="form-group">
+                <a id="linkbutton-control" href="/LinkTarget" class="btn btn-default">Link Button 1 (with href)</a>
+                <a id="linkjavascript-control" href="javascript:window.location.href = 'LinkTarget';" class="btn btn-default">Link Button 2 (with javascript)</a>
+            </div>
+
+            <div class="form-group">
+                <span id="button-clicked-text"></span>
+            </div>
+        </div>
+
+        <div id="hidden-div" style="display: none">Hidden</div>
+
+        <div class="form-group other-class">
+            <label for="text-email-control">Email Input</label>
+            <input id="text-email-control" type="email" class="form-control">
+        </div>
+
+        <div class="form-group other-class">
+            <label for="text-search-control">Search Input</label>
+            <input id="text-search-control" type="search" class="form-control">
+        </div>
+
+        <div class="form-group other-class">
+            <label for="text-url-control">URL Input</label>
+            <input id="text-url-control" type="url" class="form-control">
+        </div>
+
+        <div class="form-group other-class">
+            <label for="text-tel-control">Telephone Input</label>
+            <input id="text-tel-control" type="tel" class="form-control">
+        </div>
+
+        <div class="form-group other-class">
+            <label for="text-number-control">Number Input</label>
+            <input id="text-number-control" type="number" class="form-control">
+        </div>
+
+        <div class="form-group other-class">
+            <label for="text-password-control">Password Input</label>
+            <input id="text-password-control" type="password" class="form-control">
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        $(function () {
+
+            var submit = $('#doUpload');
+            submit.on('click', function (e) {
+                var ul = $('#upload1');
+                var fsize = ul[0].files[0].size;
+                if (fsize < 10 * 1024) return true; // max 10kb 
+                alert('your image size is too large, max size is 10Kb');
+                return false;                
+            });
+
+            var clickedText = $('#button-clicked-text');
+            $('#button-control')
+                .on('click', function (e) {
+                    clickedText.text('Button Clicked');
+                })
+                .on('dblclick', function (e) {
+                    clickedText.text('Button Double Clicked');
+                })
+                .on('mousedown', function (e) {
+                    e.stopPropagation();
+                    if (e.which == 3) {
+                        clickedText.text('Button Right Clicked');
+                    }
+                });
+
+            $('#input-button-control')
+                .on('click', function () {
+                    clickedText.text('Input Button Clicked');
+                })
+                .on('dblclick', function () {
+                    clickedText.text('Input Button Double Clicked');
+                })
+                .on('mousedown', function (e) {
+                    e.stopPropagation();
+                    if (e.which == 3) {
+                        clickedText.text('Input Button Right Clicked');
+                    }
+                });
+
+            var timeoutHandle = null;
+            $('#button-control, #input-button-control')
+                .on('mousedown', function () {
+                    if (timeoutHandle != null)
+                        clearTimeout(timeoutHandle);
+
+                    timeoutHandle = setTimeout(function () {
+                        clickedText.text('');
+                    }, 1500);
+                })
+                .on('contextmenu', function () {
+                    return false;
+                });
+
+            var tccTimeoutHandle = null;
+            $('#text-control')
+                .on('change', function () {
+                    if (tccTimeoutHandle != null)
+                        clearTimeout(tccTimeoutHandle);
+
+                    var tcc = $('#text-control-changed');
+                    tcc.text('Changed');
+
+                    tccTimeoutHandle = setTimeout(function () {
+                        tcc.text('');
+                    }, 1500);
+                });
+        });
+    </script>
+
+    <style>
+        input:hover, button:hover, textarea:hover {
+            color: rgb(255, 0, 0) !important;
+        }
+
+        input:focus, button:focus, textarea:focus {
+            color: rgb(0, 0, 255) !important;
+        }
+    </style>
