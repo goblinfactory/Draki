@@ -55,9 +55,19 @@ namespace Draki.Exceptions
     
     public static class ExceptionExtensions
     {
-        public static string ToExpressionString(this LambdaExpression expression)
+        public static string ToExpressionString(this (object key, Expression<Action> func)[] conditionFuncs)
         {
-            StringBuilder sbExpression = new StringBuilder();
+            var sb = new StringBuilder();
+            foreach(var condition in conditionFuncs)
+            {
+                condition.func.ToExpressionString(sb);
+            }
+            return sb.ToString();
+        }
+
+        public static string ToExpressionString(this LambdaExpression expression, StringBuilder sb = null)
+        {
+            StringBuilder sbExpression = sb ?? new StringBuilder();
             foreach (var exprParam in expression.Parameters)
             {
                 sbExpression.Append(exprParam);
@@ -69,7 +79,6 @@ namespace Draki.Exceptions
             exprBody = exprBody.Replace("OrElse", "||").Replace("AndAlso", "&&");
 
             sbExpression.Append(exprBody);
-
             return sbExpression.ToString();
         }
     }

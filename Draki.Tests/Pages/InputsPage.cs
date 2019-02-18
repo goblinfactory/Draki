@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Draki.Tests.Pages
+﻿namespace Draki.Tests.Pages
 {
     public class InputsPage : PageObject<InputsPage>
     {

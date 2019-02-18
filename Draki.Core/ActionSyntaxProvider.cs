@@ -180,6 +180,17 @@ namespace Draki
             return this;
         }
 
+        public object WaitUntilAny(params (object key, Expression<Action> func)[] conditionActions)
+        {
+            this.commandProvider.WaitUntilAny(conditionActions);
+            return this;
+        }
+
+        public object WaitUntilAny(TimeSpan timeout, params (object key, Expression<Action> func)[] conditionActions)
+        {
+            return commandProvider.WaitUntilAny(timeout, conditionActions);
+        }
+
         public IActionSyntaxProvider WaitUntil(Expression<Func<bool>> conditionFunc, int secondsToWait)
         {
             return this.WaitUntil(conditionFunc, TimeSpan.FromSeconds(secondsToWait));

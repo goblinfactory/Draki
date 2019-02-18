@@ -24,6 +24,7 @@ namespace Draki.Tests.Actions
         }
 
         [Test]
+        [Category(Category.SLOW)]
         public void TakeScreenshot()
         {
             TextPage.Go();

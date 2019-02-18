@@ -1,5 +1,4 @@
-﻿using System;
-using Draki.Exceptions;
+﻿using Draki.Exceptions;
 using NUnit.Framework;
 
 namespace Draki.Tests.Actions
