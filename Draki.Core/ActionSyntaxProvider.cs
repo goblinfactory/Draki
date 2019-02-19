@@ -22,6 +22,11 @@ namespace Draki
             this.settings = settings;
         }
 
+        public string GetTitle()
+        {
+            return this.commandProvider.GetTitle();
+        }
+
         internal ActionSyntaxProvider WithConfig(FluentSettings settings)
         {
             this.commandProvider.WithConfig(settings);

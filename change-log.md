@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.1.0] - 2019-02-19
+
+### Added
+
+- `GetTitle` : `I.GetTitle()` returns the page title of the current page.
 
 ## [0.2.1.0] - 2018-04-26
 

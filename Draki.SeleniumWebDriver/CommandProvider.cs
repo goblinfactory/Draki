@@ -636,6 +636,16 @@ namespace Draki
             });
         }
 
+        public string GetTitle()
+        {
+            string title = "";
+            this.Act(CommandType.Action, () =>
+            {
+                title = this.webDriver.Title;
+            });
+            return title;
+        }
+
         public void Dispose()
         {
             try

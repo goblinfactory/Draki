@@ -21,6 +21,11 @@ namespace Draki
             this.commandProviders = commandProviders;
         }
 
+        public string GetTitle()
+        {
+            return this.commandProviders.First().GetTitle();
+        }
+
         public Uri Url
         {
             get { return this.commandProviders.First().Url; }

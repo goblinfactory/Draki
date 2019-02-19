@@ -19,6 +19,7 @@ namespace Draki.Interfaces
         ElementProxy Find(string selector);
         ElementProxy FindMultiple(string selector);
 
+        string GetTitle();
         void Click(ElementProxy element);
         void DoubleClick(ElementProxy element);
         void RightClick(ElementProxy element);

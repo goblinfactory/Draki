@@ -311,5 +311,11 @@ namespace Draki.Interfaces
         /// Switch to another window or frame.
         /// </summary>
         ActionSyntaxProvider.SwitchSyntaxProvider Switch { get; }
+
+        /// <summary>
+        /// return the current page Title
+        /// </summary>
+        /// <returns></returns>
+        string GetTitle();
     }
 }

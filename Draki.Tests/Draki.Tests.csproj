@@ -66,6 +66,7 @@
     <Compile Include="Actions\DragTests.cs" />
     <Compile Include="Actions\FindTests.cs" />
     <Compile Include="Actions\FocusTests.cs" />
+    <Compile Include="Actions\GetTitleTests.cs" />
     <Compile Include="Actions\HoverTests.cs" />
     <Compile Include="Actions\OpenTests.cs" />
     <Compile Include="Actions\PressTypeTests.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="Pages\AlertsPage.cs" />
     <Compile Include="Pages\DragPage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\SwitchPage.cs" />
     <Compile Include="Pages\TextPage.cs" />
     <Compile Include="Pages\InputsPage.cs" />

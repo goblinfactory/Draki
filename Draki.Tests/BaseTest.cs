@@ -16,6 +16,7 @@ namespace Draki.Tests
             Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
 
             // Create Page Objects
+            HomePage = new Pages.HomePage(this);
             InputsPage = new Pages.InputsPage(this);
             AlertsPage = new Pages.AlertsPage(this);
             ScrollingPage = new Pages.ScrollingPage(this);
@@ -28,6 +29,7 @@ namespace Draki.Tests
             I.Open(SiteUrl);
         }
 
+        public Pages.HomePage HomePage = null;
         public Pages.InputsPage InputsPage = null;
         public Pages.AlertsPage AlertsPage = null;
         public Pages.ScrollingPage ScrollingPage = null;
