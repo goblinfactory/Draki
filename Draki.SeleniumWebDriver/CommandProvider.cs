@@ -166,7 +166,7 @@ namespace Draki
                     throw new FluentElementNotFoundException("Unable to find element with selector [{0}]", selector);
                 }
             });
-        }
+        }   
 
         public ElementProxy FindMultiple(string selector)
         {

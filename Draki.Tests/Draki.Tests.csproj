@@ -74,7 +74,7 @@
     <Compile Include="Actions\EnterTests.cs" />
     <Compile Include="Actions\TakeScreenshotTests.cs" />
     <Compile Include="Actions\UploadTests.cs" />
-    <Compile Include="Actions\WaitForAnyTests.cs" />
+    <Compile Include="Actions\WaitUntilAnyTests.cs" />
     <Compile Include="Actions\WaitTests.cs" />
     <Compile Include="Asserts\AttributeTests.cs" />
     <Compile Include="Asserts\BooleanTests.cs" />

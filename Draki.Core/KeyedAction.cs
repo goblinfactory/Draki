@@ -6,14 +6,17 @@ using System.Text;
 
 namespace Draki
 {
-    public class KeyedAction
+    public class FindText
     {
         public object Key { get; }
-        public Expression<Action> Action { get; }
-        public KeyedAction(object key, Expression<Action> action)
+        public string Selector { get; }
+        public string ContainsText { get; }
+
+        public FindText(object key, string selector, string containsText)
         {
             Key = key;
-            Action = action;
+            Selector = selector;
+            ContainsText = containsText;
         }
     }
 }

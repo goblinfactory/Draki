@@ -166,6 +166,9 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 ```csharp
 // Multi-provider sample coming soon...
 ```
+### Handy Powershell snippets
+
+> get-process | where { $_.ProcessName -eq "chromedriver" } | stop-process
 
 ### Upgrading from an earlier version of Draki
 

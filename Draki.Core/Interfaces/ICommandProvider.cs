@@ -45,8 +45,8 @@ namespace Draki.Interfaces
 
         void Wait();
         void Wait(TimeSpan timeSpan);
-        object WaitUntilAny(params KeyedAction[] conditionFuncs);
-        object WaitUntilAny(TimeSpan timeout, params KeyedAction[] conditionFuncs);
+        object WaitUntilAny(params FindText[] conditionFuncs);
+        object WaitUntilAny(TimeSpan timeout, params FindText[] conditionFuncs);
         void WaitUntil(Expression<Func<bool>> conditionFunc);
         void WaitUntil(Expression<Func<bool>> conditionFunc, TimeSpan timeout);
         void WaitUntil(Expression<Action> conditionAction);

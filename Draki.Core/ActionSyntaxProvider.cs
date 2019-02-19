@@ -180,13 +180,13 @@ namespace Draki
             return this;
         }
 
-        public object WaitUntilAny(params KeyedAction[] conditionActions)
+        public object WaitUntilAny(params FindText[] conditionActions)
         {
             this.commandProvider.WaitUntilAny(conditionActions);
             return this;
         }
 
-        public object WaitUntilAny(TimeSpan timeout, params KeyedAction[] conditionActions)
+        public object WaitUntilAny(TimeSpan timeout, params FindText[] conditionActions)
         {
             return commandProvider.WaitUntilAny(timeout, conditionActions);
         }

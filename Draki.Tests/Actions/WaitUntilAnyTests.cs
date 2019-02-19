@@ -7,19 +7,21 @@ using System.Linq;
 
 namespace Draki.Tests.Actions
 {
-    public class WaitForAnyTests : BaseTest
+    public class WaitUntilAnyTests : BaseTest
     {
         [Test]
         [Category(Category.SLOW)]
-        public void WaitForAny()
+        public void WaitUntilAny()
         {
             HomePage.Go();
 
             //I.WaitUntil(()=> I.Expect.Text("foo").In("h2"));
 
-            var page = I.WaitUntilAny( 
-                new KeyedAction("1234", ()=> I.Expect.Text("foo").In("h1")), // won't match
-                new KeyedAction("home", () => I.Expect.Text("foo").In("h2"))  // should match
+            var page = I.WaitUntilAny(TimeSpan.FromSeconds(10),
+
+                new FindText("1234", selector: "h1", containsText: "foo"),                              // won't match
+                new FindText("home", selector: "h2", containsText: "FluentAutomation Testbed Index")    // should match!
+            
             );
 
             Assert.AreEqual("home", page);

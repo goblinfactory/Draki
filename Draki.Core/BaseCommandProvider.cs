@@ -240,56 +240,6 @@ namespace Draki
             });
         }
 
-        public object WaitUntilAny(KeyedAction[] conditionFuncs)
-        {
-            return this.WaitUntilAny(this.Settings.WaitUntilTimeout, conditionFuncs);
-        }
-
-        public object WaitUntilAny(TimeSpan timeout, params KeyedAction[] conditionActions)
-        {
-            object key = null;
-            this.Act(CommandType.Wait, () =>
-            {
-                DateTime dateTimeTimeout = DateTime.Now.Add(timeout);
-                var conditions = conditionActions.Select(f => new { Key = f.Key, Action = f.Action.Compile() }).ToArray();
-
-                FluentException lastFluentException = null;
-                while (DateTime.Now < dateTimeTimeout)
-                {
-                    foreach(var condition in conditions)
-                    {
-                        try
-                        {
-                            condition.Action();
-                            key = condition.Key;
-                        }
-                        catch (FluentException ex)
-                        {
-                            lastFluentException = ex;
-                        }
-                        catch (Exception ex)
-                        {
-                            throw new FluentException("An unexpected exception was thrown inside WaitUntil(Action). See InnerException for details.", ex);
-                        }
-
-                        if (key == null)
-                        {
-                            break;
-                        }
-                    }
-
-                    System.Threading.Thread.Sleep(this.Settings.WaitUntilInterval);
-                }
-
-                // If an exception was thrown the last loop, assume we hit the timeout
-                if (key == null)
-                {
-                    throw new FluentException("Conditional wait passed the timeout [{0}ms] for expression [{1}]. See InnerException for details of the last FluentException thrown.", lastFluentException, timeout.TotalMilliseconds, conditionActions.ToExpressionString());
-                }
-            });
-            return key;
-        }
-
         public abstract void TakeScreenshot(string screenshotName);
     }
 }

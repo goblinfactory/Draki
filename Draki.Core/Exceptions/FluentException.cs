@@ -55,7 +55,7 @@ namespace Draki.Exceptions
     
     public static class ExceptionExtensions
     {
-        public static string ToExpressionString(this KeyedAction[] conditionFuncs)
+        public static string ToExpressionString(this FindText[] conditionFuncs)
         {
             var sb = new StringBuilder();
             foreach(var condition in conditionFuncs)
