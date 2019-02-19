@@ -27,6 +27,11 @@ namespace Draki
             return this.commandProvider.GetTitle();
         }
 
+        public bool QuickExists(string cssSelector)
+        {
+            return this.commandProvider.QuickExists(cssSelector);
+        }
+
         internal ActionSyntaxProvider WithConfig(FluentSettings settings)
         {
             this.commandProvider.WithConfig(settings);

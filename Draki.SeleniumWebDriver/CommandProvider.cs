@@ -636,6 +636,30 @@ namespace Draki
             });
         }
 
+        public bool QuickExists(string cssSelector)
+        {
+            bool exists = false;
+
+            this.Act(CommandType.Action, () =>
+                {
+                    try
+                    {
+                        var element = this.WithConfig(new FluentSettings()
+                        {
+                            WaitOnAllActions = false,
+                            WaitTimeout = TimeSpan.FromMilliseconds(100)
+                        })
+                        .Find(cssSelector).Element;
+                        exists = element != null;
+                    }
+                    catch
+                    {
+                        exists = false;
+                    }
+                });
+                return exists;
+        }
+
         public string GetTitle()
         {
             string title = "";

@@ -64,6 +64,7 @@
     <Compile Include="Actions\AppendTests.cs" />
     <Compile Include="Actions\ClickTests.cs" />
     <Compile Include="Actions\DragTests.cs" />
+    <Compile Include="Actions\QuickExistTests.cs" />
     <Compile Include="Actions\FindTests.cs" />
     <Compile Include="Actions\FocusTests.cs" />
     <Compile Include="Actions\GetTitleTests.cs" />

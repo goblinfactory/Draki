@@ -21,6 +21,11 @@ namespace Draki
             this.commandProviders = commandProviders;
         }
 
+        public bool QuickExists(string cssSelector)
+        {
+            return this.commandProviders.First().QuickExists(cssSelector);
+        }
+
         public string GetTitle()
         {
             return this.commandProviders.First().GetTitle();

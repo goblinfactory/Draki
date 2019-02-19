@@ -317,5 +317,12 @@ namespace Draki.Interfaces
         /// </summary>
         /// <returns></returns>
         string GetTitle();
+
+        /// <summary>
+        /// Quick check that a cssSelector exists. You must have first confirmed the page has fully loaded before using this by calling any of the non quick methods.
+        /// </summary>
+        /// <param name="cssSelector"></param>
+        /// <returns>true if the element exists</returns>
+        bool QuickExists(string cssSelector);
     }
 }

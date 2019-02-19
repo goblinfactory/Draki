@@ -19,13 +19,14 @@ namespace Draki.Interfaces
         ElementProxy Find(string selector);
         ElementProxy FindMultiple(string selector);
 
+        bool QuickExists(string cssSelector);
         string GetTitle();
+
         void Click(ElementProxy element);
         void DoubleClick(ElementProxy element);
         void RightClick(ElementProxy element);
         void Hover(ElementProxy element);
         void Focus(ElementProxy element);
-
         void DragAndDrop(ElementProxy source, ElementProxy target);
         void EnterText(ElementProxy element, string text);
         void EnterTextWithoutEvents(ElementProxy element, string text);
