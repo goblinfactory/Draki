@@ -55,12 +55,12 @@ namespace Draki.Exceptions
     
     public static class ExceptionExtensions
     {
-        public static string ToExpressionString(this (object key, Expression<Action> func)[] conditionFuncs)
+        public static string ToExpressionString(this KeyedAction[] conditionFuncs)
         {
             var sb = new StringBuilder();
             foreach(var condition in conditionFuncs)
             {
-                condition.func.ToExpressionString(sb);
+                condition.Action.ToExpressionString(sb);
             }
             return sb.ToString();
         }

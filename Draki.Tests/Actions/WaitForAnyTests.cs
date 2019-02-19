@@ -17,9 +17,9 @@ namespace Draki.Tests.Actions
 
             //I.WaitUntil(()=> I.Expect.Text("foo").In("h2"));
 
-            var page = I.WaitUntilAny(
-                ("1234", () => I.Expect.Text("foo").In("h1")), // won't match
-                ("home", () => I.Expect.Text("foo").In("h2"))  // should match
+            var page = I.WaitUntilAny( 
+                new KeyedAction("1234", ()=> I.Expect.Text("foo").In("h1")), // won't match
+                new KeyedAction("home", () => I.Expect.Text("foo").In("h2"))  // should match
             );
 
             Assert.AreEqual("home", page);

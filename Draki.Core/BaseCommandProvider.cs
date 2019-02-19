@@ -240,18 +240,18 @@ namespace Draki
             });
         }
 
-        public object WaitUntilAny((object key, Expression<Action> func)[] conditionFuncs)
+        public object WaitUntilAny(KeyedAction[] conditionFuncs)
         {
             return this.WaitUntilAny(this.Settings.WaitUntilTimeout, conditionFuncs);
         }
 
-        public object WaitUntilAny(TimeSpan timeout, params (object key, Expression<Action> func)[] conditionActions)
+        public object WaitUntilAny(TimeSpan timeout, params KeyedAction[] conditionActions)
         {
             object key = null;
             this.Act(CommandType.Wait, () =>
             {
                 DateTime dateTimeTimeout = DateTime.Now.Add(timeout);
-                var conditions = conditionActions.Select(f => new { Key = f.key, Action = f.func.Compile() }).ToArray();
+                var conditions = conditionActions.Select(f => new { Key = f.Key, Action = f.Action.Compile() }).ToArray();
 
                 FluentException lastFluentException = null;
                 while (DateTime.Now < dateTimeTimeout)

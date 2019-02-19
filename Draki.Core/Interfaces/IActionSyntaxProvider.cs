@@ -95,13 +95,13 @@ namespace Draki.Interfaces
         /// </summary>
         /// <param name="conditionAction">Action to be repeated until any  conditions succeeds or exceeds the timeout.</param>
         /// <param name="timeout">Timeout for this specific action.</param>
-        object WaitUntilAny(TimeSpan timeout, params (object key, Expression<Action> func)[] conditionActions);
+        object WaitUntilAny(TimeSpan timeout, params KeyedAction[] conditionActions);
 
         /// <summary>
         /// Wait until any of the provided <paramref name="conditionAction">action</paramref> succeeds. Intended for use with I.Expect.* methods. Returns the key for the condition that matched first.
         /// </summary>
         /// <param name="conditionAction">Action to be repeated until it succeeds or exceeds the timeout. <see cref="Settings.DefaultWaitUntilTimeout"/> determines the timeout.</param>
-        object WaitUntilAny(params (object key, Expression<Action> func)[] conditionActions);
+        object WaitUntilAny(params KeyedAction[] conditionActions);
 
         /// <summary>
         /// Wait until the provided <paramref name="conditionAction">action</paramref> succeeds. Intended for use with I.Expect.* methods.

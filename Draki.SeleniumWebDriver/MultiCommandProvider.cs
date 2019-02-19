@@ -189,12 +189,12 @@ namespace Draki
             this.RepackExceptions(() => Parallel.ForEach(this.commandProviders, x => x.WaitUntil(conditionAction, timeout)));
         }
 
-        public object WaitUntilAny(TimeSpan timeout, params (object key, Expression<Action> func)[] conditionActions)
+        public object WaitUntilAny(TimeSpan timeout, params KeyedAction[] conditionActions)
         {
             throw new NotImplementedException();
         }
 
-        public object WaitUntilAny(params (object key, Expression<Action> func)[] conditionActions)
+        public object WaitUntilAny(params KeyedAction[] conditionActions)
         {
             throw new NotImplementedException();
         }
