@@ -1,0 +1,23 @@
+﻿
+section {
+    width: 50%;
+    padding: 20px;
+}
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+}
+
+ul.sublink a {
+    color: black;
+    padding: 2px;
+    margin-left: 20px;
+}
+
+ul.sublink {
+    padding-top: 10px;
+}

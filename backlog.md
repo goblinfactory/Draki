@@ -1,5 +1,24 @@
 # Alan's Backlog & random thoughts - notes
 
+## proposed [1.4.0] busy
+
+- `?? to be defined` : Some means of avoiding the lengthy delay associated with disabling StickySessions. e.g. can we make the driver non static, so that we have multiple test runner sessions?
+
+## proposed [1.3.0] busy
+
+- `T[] Parse<T>(cssSelector)` : parses the results from element into T. Each property on T becomes a selector, and will find the matching property from the selected items, or in it's children.
+- `Verify<T>` : better verification, scrubb.
+- VerifyStrict(cssSelector) : hard core, verify 100% - not even a single character or whitespace can change without requiring approval.
+
+## proposed [1.2.0] - busy
+
+- get onto appveyor.
+- add extra pages to test project, with cookie (forms authentication) logins to test logging in as different users.
+- `void ClickLink(string linktextContains)` : click the first link with text containing x
+- `string GetXml(cssSelector)` : retrieve the outterXml for an element by cssSelector. Typically used for snapshot testing verification.
+- `string GetText(cssSelector)` : retrieve the text of an element by cssSelector
+- `string[] GetTexts(cssSelector, bool mustBeManyAndMoreThanOne)` : used for bulk verification of repeating items.
+
 ### TODO (to investigate)
 
 * Strip out and remove as much code as I can.

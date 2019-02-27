@@ -1,0 +1,20 @@
+﻿
+#login {
+    font-size:6pt;
+    padding:6px;
+}
+
+#login > input { 
+    width:40px; 
+}
+
+li.loggedin a, li.loggedin a:hover, li.loggedin a:focus {
+    background-color: darkseagreen !important;
+    cursor: default;
+    color:darkslategray !important;
+}
+
+
+[v-cloak] {
+    display: none !important;
+}

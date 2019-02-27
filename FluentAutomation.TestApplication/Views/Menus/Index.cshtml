@@ -1,0 +1,73 @@
+﻿@{
+                /**/
+
+                ViewBag.Title = "Menus";
+}
+
+<link href="~/Content/style-menus.css" rel="stylesheet" type="text/css" />
+
+<h2>Menus examples</h2>
+
+<p>Example of typical menu navigation with parent, child, enabled and disabled menu items</p>
+<p><b>Left Menu</b> : ul list of menu options, no children.</p>
+<p><b>Right Menu</b> : UL list of menu options, with children, one menu item marked as active. All top menu items have children, all are collapsed, only active menu item is not collapsed. Useful for testing selecting and verifying parent child collections. `SubSection 3` is only visible when you are logged in.</p>
+
+<!-- HORIZONTAL EXAMPLE -->
+
+<section id="left">
+    <h3>Left Menu</h3>
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="/Switch">Switch</a></li>
+        <li><a href="/Alerts">Alerts</a></li>
+        <li><a href="/Inputs">Inputs</a></li>
+        <li><a href="/Scrolling">Scrolling</a></li>
+        <li><a href="/Text">Text</a></li>
+        <li><a href="/DragAndDrop">Drag and Drop</a></li>
+    </ul>
+</section>
+
+<section id="right">
+    <h3>Right Menu</h3>
+    <ul class="nav nav-pills nav-stacked">
+        <li>
+            <a href="#" data-toggle="collapse" data-target="#submenu1">Subsection 1</a>
+            <ul class="nav sublink collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
+                <li><a href="#">Link 1.1</a></li>
+                <li><a href="#">Link 1.2</a></li>
+                <li><a href="#">Link 1.3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" data-toggle="collapse" data-target="#submenu2">Subsection 2</a>
+            <ul class="nav sublink collapse" id="submenu2" role="menu" aria-labelledby="btn-1">
+                <li><a href="#">Link 1.1</a></li>
+                <li><a href="#">Link 1.2</a></li>
+                <li><a href="#">Link 1.3</a></li>
+            </ul>
+        </li>
+        <li class="active" v-if="loggedIn">
+            <a href="#" data-toggle="collapse" data-target="#submenu3">Subsection 3</a>
+            <ul class="nav sublink " id="submenu3" role="menu" aria-labelledby="btn-1">
+                <li><a href="#">Link 2.1</a></li>
+                <li><a href="#">Link 2.2</a></li>
+                <li><a href="#">Link 2.3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" data-toggle="collapse" data-target="#submenu4">Subsection 4</a>
+            <ul class="nav sublink collapse" id="submenu4" role="menu" aria-labelledby="btn-1">
+                <li><a href="#">Link 3.1</a></li>
+                <li><a href="#">Link 3.2</a></li>
+                <li><a href="#">Link 3.3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" data-toggle="collapse" data-target="#submenu5">Subsection 5</a>
+            <ul class="nav sublink collapse" id="submenu5" role="menu" aria-labelledby="btn-1">
+                <li><a href="#">Link 4.1</a></li>
+                <li><a href="#">Link 4.2</a></li>
+                <li><a href="#">Link 4.3</a></li>
+            </ul>
+        </li>
+    </ul>
+</section>

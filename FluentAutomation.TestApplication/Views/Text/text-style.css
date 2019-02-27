@@ -1,0 +1,7 @@
+﻿a:hover, h1:hover {
+    color: rgb(255, 0, 0) !important;
+}
+
+a:focus, h1:focus {
+    color: rgb(0, 0, 255) !important;
+}
