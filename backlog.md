@@ -1,5 +1,10 @@
 # Alan's Backlog & random thoughts - notes
 
+## unsorted
+
+- add ability to select options from <Input> based dropdowns! New in html 5 (vueJs)
+   Googling this suggests having to use ugly Arrow keys and presses??
+
 ## proposed [1.4.0] busy
 
 - `?? to be defined` : Some means of avoiding the lengthy delay associated with disabling StickySessions. e.g. can we make the driver non static, so that we have multiple test runner sessions?
