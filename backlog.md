@@ -2,8 +2,9 @@
 
 ## unsorted
 
+- write up diff between draki and selenium.
 - add ability to select options from <Input> based dropdowns! New in html 5 (vueJs)
-   Googling this suggests having to use ugly Arrow keys and presses??
+	- click input, scroll select into view, click select.
 
 ## proposed [1.4.0] busy
 
@@ -17,7 +18,7 @@
 
 ## proposed [1.2.0] - busy
 
-- get onto appveyor.
+- get onto appveyor or AzureDevops.
 - add extra pages to test project, with cookie (forms authentication) logins to test logging in as different users.
 - `void ClickLink(string linktextContains)` : click the first link with text containing x
 - `string GetXml(cssSelector)` : retrieve the outterXml for an element by cssSelector. Typically used for snapshot testing verification.
