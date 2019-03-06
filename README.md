@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/Draki-web-testing/Lobby](https://badges.gitter.im/Draki-web-testing/Lobby.svg)](https://gitter.im/Draki-web-testing/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-### Simple and rapid critical path smoke testing for web apps
+### write robust web automation scripts in C#. Use for requirement verification, smoke tests, acceptance tests, you name it, Draki does it, fluently, quickly, easily.
 
 *Make it so easy to write a functional smoke test for your web application that there's no excuse not to!*
 
