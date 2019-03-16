@@ -26,11 +26,16 @@ namespace Draki.Tests.Actions
         [Test]
         public void FocusLink()
         {
+            // CURRENTLY NOT WORKING!
             TextPage.Go();
 
             I.Assert.Css("color", InputsPage.FocusColor).Not.On(TextPage.Link1Selector);
-            I.Focus(TextPage.Link1Selector)
-             .Assert.Css("color", InputsPage.FocusColor).On(TextPage.Link1Selector);
+            I.Focus(TextPage.Link1Selector);
+            I.Wait(1);
+            I.Focus(TextPage.Link2Selector);
+            I.Wait(1);
+            I.Focus(TextPage.Link1Selector);
+            I.Assert.Css("color", InputsPage.FocusColor).On(TextPage.Link1Selector);
         }
 
         [Test]
@@ -38,13 +43,13 @@ namespace Draki.Tests.Actions
         public void FocusInput()
         {
             InputsPage.Go();
-            I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.TextControlSelector);
+            I.Assert.Css("background-color", InputsPage.FocusColor).Not.On(InputsPage.TextControlSelector);
             I.Focus(InputsPage.TextControlSelector)
-             .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.TextControlSelector);
+             .Assert.Css("background-color", InputsPage.FocusColor).On(InputsPage.TextControlSelector);
 
-            I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.TextareaControlSelector);
+            I.Assert.Css("background-color", InputsPage.FocusColor).Not.On(InputsPage.TextareaControlSelector);
             I.Focus(InputsPage.TextareaControlSelector)
-             .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.TextareaControlSelector);
+             .Assert.Css("background-color", InputsPage.FocusColor).On(InputsPage.TextareaControlSelector);
         }
 
         [Test]

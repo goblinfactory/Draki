@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### changed
 
 - move to dotnetcore - TBD.
-
+- updated selenium drivers
+- tests run a lot faster. (some numbers will be massively helpful.)
+- removed Winforms sendkeys, replaced with Selenium.Sendkeys.
 
 ### added
 

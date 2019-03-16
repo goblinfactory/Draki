@@ -21,6 +21,8 @@ namespace Draki.Tests.Pages
 
         public string Link1Selector = "#link1";
 
+        public string Input1Selector = "#textbox1";
+
         public string Link2Selector = "#link1";
 
         public string HoverColor = "rgb(255, 0, 0)";

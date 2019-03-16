@@ -1,0 +1,3 @@
+﻿input:focus, textarea:focus, select:focus {
+    background-color:aliceblue;
+}

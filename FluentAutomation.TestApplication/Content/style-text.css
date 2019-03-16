@@ -5,3 +5,7 @@
 a:focus, h1:focus {
     color: rgb(0, 0, 255) !important;
 }
+
+#textbox1:focus {
+    background-color:aliceblue;
+}

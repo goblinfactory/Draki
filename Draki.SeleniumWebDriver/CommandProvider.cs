@@ -255,7 +255,7 @@ namespace Draki
             this.Act(CommandType.Action, () =>
             {
                 var unwrappedElement = element.Element as Element;
-
+                
                 switch (unwrappedElement.WebElement.TagName)
                 {
                     case "input":

@@ -167,6 +167,10 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 // Multi-provider sample coming soon...
 ```
 
+### How is Draki different to simply using Selenium directly?
+
+- TBD (need link to seperate document for this!)
+
 ### Upgrading from an earlier version of Draki
 
 1. manually delete the existing draki packages from your solution package folders
@@ -196,3 +200,7 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 * result is much smaller code base
 * The added benefit of the reduced API is a longer 'shelf life' between each package release before any update of Chrome or Selenium causes one of the API's on the test library to fail and require a new nuget release. 
 * The aim is to be able to automate the testing of new Chrome packages, and immediately (automatically) bring out a new nuget package if an update to Selenium passes all tests, without human intervention.
+
+### useful references
+
+* https://www.automatetheplanet.com/selenium-webdriver-csharp-cheat-sheet/
