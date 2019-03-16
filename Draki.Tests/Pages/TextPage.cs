@@ -25,6 +25,8 @@ namespace Draki.Tests.Pages
 
         public string Link2Selector = "#link1";
 
+        public string LinkTextDecorationHover = "underline solid rgb(0, 0, 255)";
+
         public string HoverColor = "rgb(255, 0, 0)";
 
         public string FocusColor = "rgb(0, 0, 255)";

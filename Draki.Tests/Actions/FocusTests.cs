@@ -26,16 +26,13 @@ namespace Draki.Tests.Actions
         [Test]
         public void FocusLink()
         {
-            // CURRENTLY NOT WORKING!
             TextPage.Go();
-
-            I.Assert.Css("color", InputsPage.FocusColor).Not.On(TextPage.Link1Selector);
+            I.Assert.Css("text-decoration", TextPage.LinkTextDecorationHover).Not.On(TextPage.Link1Selector);
+            I.Assert.Css("text-decoration", TextPage.LinkTextDecorationHover).Not.On(TextPage.Link1Selector);
             I.Focus(TextPage.Link1Selector);
-            I.Wait(1);
+            I.Assert.Css("text-decoration", TextPage.LinkTextDecorationHover).On(TextPage.Link1Selector);
             I.Focus(TextPage.Link2Selector);
-            I.Wait(1);
-            I.Focus(TextPage.Link1Selector);
-            I.Assert.Css("color", InputsPage.FocusColor).On(TextPage.Link1Selector);
+            I.Assert.Css("text-decoration", TextPage.LinkTextDecorationHover).On(TextPage.Link2Selector);
         }
 
         [Test]
