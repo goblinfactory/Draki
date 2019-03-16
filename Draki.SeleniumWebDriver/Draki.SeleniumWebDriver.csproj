@@ -3,6 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="3rdPartyLib\chromedriver.exe" />
+    <None Remove="3rdPartyLib\IEDriverServer32.exe" />
+    <None Remove="3rdPartyLib\IEDriverServer64.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="3rdPartyLib\chromedriver.exe" />
+    <EmbeddedResource Include="3rdPartyLib\IEDriverServer32.exe" />
+    <EmbeddedResource Include="3rdPartyLib\IEDriverServer64.exe" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />

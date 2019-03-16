@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [2.0]
 
+### changed
+
+- move to dotnetcore - TBD.
+
+
+### added
+
+### deleted
 - removed phantomJs : See https://stackoverflow.com/questions/52442100/selenium-phantomjs-is-invalid-namespace
 
 
