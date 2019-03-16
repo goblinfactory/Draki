@@ -201,13 +201,20 @@ namespace Draki
 
         public void Press(string keys)
         {
-            throw new NotImplementedException("Win32 based events are not currently functioning in multi-browser tests");
+            throw new NotImplementedException("not yet implemented");
         }
 
         public void Type(string text)
         {
             throw new NotImplementedException("Win32 based events are not currently functioning in multi-browser tests");
         }
+
+        public void SendKeys(ElementProxy element, string text)
+        {
+            //TODO : needs test
+            this.RepackExceptions(() => Parallel.ForEach(this.commandProviders, x => x.Press(text)));
+        }
+
 
         public void SwitchToFrame(string frameName)
         {

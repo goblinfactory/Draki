@@ -1,5 +1,11 @@
 # Alan's Backlog & random thoughts - notes
 
+## TODO
+
+- take a look at https://github.com/jbaranda/nupkg-selenium-webdrivers
+  and see if that avoids having to embed the drivers,
+  or if thats just doing the same thing in a more roundabout way. 
+
 ## unsorted
 
 - write up diff between draki and selenium.

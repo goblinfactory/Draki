@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
+using System.Linq;  
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +18,7 @@ namespace Draki
     {
         private readonly IFileStoreProvider fileStoreProvider = null;
         private readonly Lazy<IWebDriver> lazyWebDriver = null;
+
         private IWebDriver webDriver
         {
             get
@@ -28,6 +28,7 @@ namespace Draki
         }
 
         private string mainWindowHandle = null;
+        private ElementProxy _currentElement;
 
         public CommandProvider(Func<IWebDriver> webDriverFactory, IFileStoreProvider fileStoreProvider)
         {
@@ -154,7 +155,7 @@ namespace Draki
 
         public ElementProxy Find(string selector)
         {
-            return new ElementProxy(this, () =>
+            _currentElement = new ElementProxy(this, () =>
             {
                 try
                 {
@@ -166,6 +167,7 @@ namespace Draki
                     throw new FluentElementNotFoundException("Unable to find element with selector [{0}]", selector);
                 }
             });
+            return _currentElement;
         }
 
         public ElementProxy FindMultiple(string selector)
@@ -249,6 +251,7 @@ namespace Draki
 
         public void Focus(ElementProxy element)
         {
+            _currentElement = element;
             this.Act(CommandType.Action, () =>
             {
                 var unwrappedElement = element.Element as Element;
@@ -317,6 +320,15 @@ namespace Draki
                 var unwrappedElement = element.Element as Element;
 
                 unwrappedElement.WebElement.Clear();
+                unwrappedElement.WebElement.SendKeys(text);
+            });
+        }
+
+        public void SendKeys(ElementProxy element, string text)
+        {
+            this.Act(CommandType.Action, () =>
+            {
+                var unwrappedElement = element.Element as Element;
                 unwrappedElement.WebElement.SendKeys(text);
             });
         }
@@ -466,18 +478,24 @@ namespace Draki
             });
         }
 
+        // typically used to press function keys e.g. {ESCAPE}, {TAB} or {ENTER} 
         public void Press(string keys)
         {
-            this.Act(CommandType.Action, () => System.Windows.Forms.SendKeys.SendWait(keys));
+            SendKeys(_currentElement, keys);
         }
 
         public void Type(string text)
-        {
+        {            
+            if(_currentElement == null)
+            {
+                throw new InvalidOperationException("Cannot type if no element has focus. Either Find an element first or set focus on an element.");
+            }
+
             this.Act(CommandType.Action, () =>
             {
                 foreach (var character in text)
                 {
-                    System.Windows.Forms.SendKeys.SendWait(character.ToString());
+                    this.SendKeys(_currentElement, new string( new[] { character }));
                     this.Wait(TimeSpan.FromMilliseconds(20));
                 }
             });

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Draki.Exceptions;
 using NUnit.Framework;
+using OpenQA.Selenium;
 
 namespace Draki.Tests.Actions
 {

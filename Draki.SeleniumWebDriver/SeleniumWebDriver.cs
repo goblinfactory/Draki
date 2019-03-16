@@ -9,6 +9,9 @@ using System.Reflection;
 using Draki.Exceptions;
 using Draki.Interfaces;
 using Draki.Wrappers;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Safari;
 
 namespace Draki
 {
@@ -41,11 +44,6 @@ namespace Draki
             /// Google Chrome
             /// </summary>
             Chrome = 4,
-
-            /// <summary>
-            /// PhantomJS - Experimental - Headless browser
-            /// </summary>
-            PhantomJs = 5,
 
             /// <summary>
             /// Safari - Experimental - Only usable with a Remote URI
@@ -157,7 +155,7 @@ namespace Draki
                 container.Register<IAssertProvider, AssertProvider>();
                 container.Register<IFileStoreProvider, LocalFileStoreProvider>();
 
-                DesiredCapabilities browserCapabilities = GenerateDesiredCapabilities(browser);
+                ICapabilities browserCapabilities = GenerateDesiredCapabilities(browser);
                 container.Register<IWebDriver, RemoteWebDriver>(new EnhancedRemoteWebDriver(driverUri, browserCapabilities, commandTimeout));
             };
         }
@@ -187,11 +185,7 @@ namespace Draki
                 container.Register<IAssertProvider, AssertProvider>();
                 container.Register<IFileStoreProvider, LocalFileStoreProvider>();
 
-                DesiredCapabilities browserCapabilities = GenerateDesiredCapabilities(browser);
-                foreach (var cap in capabilities)
-                {
-                    browserCapabilities.SetCapability(cap.Key, cap.Value);
-                }
+                ICapabilities browserCapabilities = GenerateDesiredCapabilities(browser, capabilities);
 
                 container.Register<IWebDriver, RemoteWebDriver>(new EnhancedRemoteWebDriver(driverUri, browserCapabilities, commandTimeout));
             };
@@ -233,13 +227,18 @@ namespace Draki
                     return new Func<IWebDriver>(() => new Wrappers.IEDriverWrapper(Path.GetDirectoryName(driverPath), commandTimeout));
                 case Browser.Firefox:
                     return new Func<IWebDriver>(() => {
-                        var firefoxBinary = new OpenQA.Selenium.Firefox.FirefoxBinary();
-                        return new OpenQA.Selenium.Firefox.FirefoxDriver(firefoxBinary, new OpenQA.Selenium.Firefox.FirefoxProfile
+                        var service = FirefoxDriverService.CreateDefaultService();
+                        var profile = new FirefoxProfile
                         {
                             EnableNativeEvents = false,
                             AcceptUntrustedCertificates = true,
                             AlwaysLoadNoFocusLibrary = true
-                        }, commandTimeout);
+                        };
+                        var ffOptions = new FirefoxOptions()
+                        {
+                            Profile = profile,
+                        };
+                        return new FirefoxDriver(service, ffOptions, commandTimeout);
                     });
                 case Browser.Chrome:
                     driverPath = EmbeddedResources.UnpackFromAssembly("chromedriver.exe", Assembly.GetAssembly(typeof(SeleniumWebDriver)));
@@ -250,55 +249,64 @@ namespace Draki
                     var chromeOptions = new ChromeOptions();
                     chromeOptions.AddArgument("--log-level=3");
 
-                    return new Func<IWebDriver>(() => new OpenQA.Selenium.Chrome.ChromeDriver(chromeService, chromeOptions, commandTimeout));
-                case Browser.PhantomJs:
-                    driverPath = EmbeddedResources.UnpackFromAssembly("phantomjs.exe", Assembly.GetAssembly(typeof(SeleniumWebDriver)));
-
-                    var phantomOptions = new OpenQA.Selenium.PhantomJS.PhantomJSOptions();
-                    return new Func<IWebDriver>(() => new OpenQA.Selenium.PhantomJS.PhantomJSDriver(Path.GetDirectoryName(driverPath), phantomOptions, commandTimeout));
+                    return new Func<IWebDriver>(() => new ChromeDriver(chromeService, chromeOptions, commandTimeout));
             }
 
             throw new NotImplementedException("Selected browser " + browser.ToString() + " is not supported yet.");
         }
 
-        private static DesiredCapabilities GenerateDesiredCapabilities(Browser browser)
+        private static ICapabilities GenerateDesiredCapabilities(Browser browser, Dictionary<string, object> desiredbrowsercaps = null)
         {
-            DesiredCapabilities browserCapabilities = null;
+            Dictionary<string, object> browsercaps = desiredbrowsercaps ?? new Dictionary<string, object>();
+            ICapabilities CreateChromeOptions(string emulateDevice) {
+                var options = new ChromeOptions();
+                options.EnableMobileEmulation("iPad");
+                var caps = CreateOptions(options, browsercaps);
+                return caps;
+            }
+
+            ICapabilities CreateOptions(DriverOptions options, Dictionary<string, object> capabilities)
+            {
+                options.AddAdditionalCapability("javascriptEnabled", true);
+                foreach(var cap in capabilities)
+                {
+                    options.AddAdditionalCapability(cap.Key, cap.Value);
+                }
+                var caps = options.ToCapabilities();
+                return caps;
+            }
+
+
+            ICapabilities browserCapabilities;
 
             switch (browser)
             {
                 case Browser.InternetExplorer:
                 case Browser.InternetExplorer64:
-                    browserCapabilities = DesiredCapabilities.InternetExplorer();
+                    browserCapabilities = CreateOptions(new InternetExplorerOptions(), browsercaps);
                     break;
                 case Browser.Firefox:
-                    browserCapabilities = DesiredCapabilities.Firefox();
-                    break;
-                case Browser.Chrome:
-                    browserCapabilities = DesiredCapabilities.Chrome();
-                    break;
-                case Browser.PhantomJs:
-                    browserCapabilities = DesiredCapabilities.PhantomJS();
-                    break;
-                case Browser.Safari:
-                    browserCapabilities = DesiredCapabilities.Safari();
-                    break;
-                case Browser.iPad:
-                    browserCapabilities = DesiredCapabilities.IPad();
+                    browserCapabilities = CreateOptions(new FirefoxOptions(), browsercaps);
                     break;
                 case Browser.iPhone:
-                    browserCapabilities = DesiredCapabilities.IPhone();
+                    browserCapabilities = CreateChromeOptions("iPhone");
                     break;
-                case Browser.Android:
-                    browserCapabilities = DesiredCapabilities.Android();
+                case Browser.iPad:
+                    browserCapabilities = CreateChromeOptions("iPad");
+                    break;
+                case Browser.Chrome:
+                    browserCapabilities = CreateOptions(new ChromeOptions(), browsercaps);
+                    break;
+                case Browser.Safari:
+                    browserCapabilities = CreateOptions(new SafariOptions(), browsercaps);
                     break;
                 default:
                     throw new FluentException("Selected browser [{0}] not supported. Unable to determine appropriate capabilities.", browser.ToString());
             }
-
             // see https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
-            browserCapabilities.SetCapability("javascriptEnabled", true);
             return browserCapabilities;
         }
+
+
     }
 }
