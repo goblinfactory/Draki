@@ -13,8 +13,7 @@ namespace Draki.Tests.Pages
             this.Url = "/Inputs";
         }
 
-        const string COLOR_ALICE_BLUE = "rgb(240, 248, 255)";
-        const string COLOR_RED = "rgb(255, 248, 255)";
+
 
         public string TextControlSelector = "#text-control";
 
@@ -39,8 +38,8 @@ namespace Draki.Tests.Pages
 
         public string HiddenDivSelector = "#hidden-div";
 
-        public string HoverColor = COLOR_RED;
-        public string FocusColor = COLOR_ALICE_BLUE;
+        public string HoverColor = Colors.RED;
+        public string ButtonFocusColor = Colors.SILVER;
 
         public string TextEmailControlSelector = "#text-email-control";
         public string TextSearchControlSelector = "#text-search-control";

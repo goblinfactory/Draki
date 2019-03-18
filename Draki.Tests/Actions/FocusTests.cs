@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Draki.Tests.Pages;
 using NUnit.Framework;
 
 namespace Draki.Tests.Actions
@@ -15,12 +16,10 @@ namespace Draki.Tests.Actions
         public void FocusBlockElement()
         {
             TextPage.Go();
-
-            I.Assert.Css("color", InputsPage.FocusColor).Not.On(TextPage.TitleSelector);
-
+            I.Assert.Css("color", Colors.ALICE_BLUE).Not.On(TextPage.TitleSelector);
             // This shouldn't actually do anything. Focusing a block element makes no sense.
             I.Focus(TextPage.TitleSelector)
-             .Assert.Css("color", InputsPage.FocusColor).Not.On(TextPage.TitleSelector);
+             .Assert.Css("color", Colors.ALICE_BLUE).Not.On(TextPage.TitleSelector);
         }
 
         [Test]
@@ -40,31 +39,32 @@ namespace Draki.Tests.Actions
         public void FocusInput()
         {
             InputsPage.Go();
-            I.Assert.Css("background-color", InputsPage.FocusColor).Not.On(InputsPage.TextControlSelector);
+            I.Assert.Css("background-color", Colors.ALICE_BLUE).Not.On(InputsPage.TextControlSelector);
             I.Focus(InputsPage.TextControlSelector)
-             .Assert.Css("background-color", InputsPage.FocusColor).On(InputsPage.TextControlSelector);
+             .Assert.Css("background-color", Colors.ALICE_BLUE).On(InputsPage.TextControlSelector);
 
-            I.Assert.Css("background-color", InputsPage.FocusColor).Not.On(InputsPage.TextareaControlSelector);
+            I.Assert.Css("background-color", Colors.ALICE_BLUE).Not.On(InputsPage.TextareaControlSelector);
             I.Focus(InputsPage.TextareaControlSelector)
-             .Assert.Css("background-color", InputsPage.FocusColor).On(InputsPage.TextareaControlSelector);
+             .Assert.Css("background-color", Colors.ALICE_BLUE).On(InputsPage.TextareaControlSelector);
         }
 
         [Test]
         public void FocusInputButton()
         {
             InputsPage.Go();
-            I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.InputButtonControlSelector);
+            I.Assert.Css("background-color", Colors.DARK_BLUE).Not.On(InputsPage.InputButtonControlSelector);
             I.Focus(InputsPage.InputButtonControlSelector)
-             .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.InputButtonControlSelector);
+                .Assert.Css("background-color", Colors.DARK_BLUE).On(InputsPage.InputButtonControlSelector);
         }
 
         [Test]
         public void FocusButton()
         {
             InputsPage.Go();
-            I.Assert.Css("color", InputsPage.FocusColor).Not.On(InputsPage.ButtonControlSelector);
-            I.Focus(InputsPage.ButtonControlSelector)
-             .Assert.Css("color", InputsPage.FocusColor).On(InputsPage.ButtonControlSelector);
+            I.Focus(InputsPage.InputButtonControlSelector);
+            I.Assert.Css("background-color", InputsPage.ButtonFocusColor).Not.On(InputsPage.ButtonControlSelector);
+            I.Focus(InputsPage.ButtonControlSelector);
+            I.Assert.Css("background-color", InputsPage.ButtonFocusColor).On(InputsPage.ButtonControlSelector);
         }
 
         /// <summary>
