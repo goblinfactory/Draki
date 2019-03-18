@@ -28,7 +28,6 @@ namespace Draki
         }
 
         private string mainWindowHandle = null;
-        private ElementProxy _currentElement;
 
         public CommandProvider(Func<IWebDriver> webDriverFactory, IFileStoreProvider fileStoreProvider)
         {
@@ -155,7 +154,7 @@ namespace Draki
 
         public ElementProxy Find(string selector)
         {
-            _currentElement = new ElementProxy(this, () =>
+            var proxy = new ElementProxy(this, () =>
             {
                 try
                 {
@@ -167,7 +166,7 @@ namespace Draki
                     throw new FluentElementNotFoundException("Unable to find element with selector [{0}]", selector);
                 }
             });
-            return _currentElement;
+            return proxy;
         }
 
         public ElementProxy FindMultiple(string selector)
@@ -251,7 +250,6 @@ namespace Draki
 
         public void Focus(ElementProxy element)
         {
-            _currentElement = element;
             this.Act(CommandType.Action, () =>
             {
                 var unwrappedElement = element.Element as Element;
@@ -478,25 +476,22 @@ namespace Draki
             });
         }
 
-        // typically used to press function keys e.g. {ESCAPE}, {TAB} or {ENTER} 
-        public void Press(string keys)
+        public void Press(params Key[] keys)
         {
-            SendKeys(_currentElement, keys);
+            foreach (var key in keys) Type(key.ToSeleniumKey());
         }
 
         public void Type(string text)
-        {            
-            if(_currentElement == null)
-            {
-                throw new InvalidOperationException("Cannot type if no element has focus. Either Find an element first or set focus on an element.");
-            }
+        {
+            var currentElement = webDriver.SwitchTo().ActiveElement();
 
-            this.Act(CommandType.Action, () =>
+            Act(CommandType.Action, () =>
             {
                 foreach (var character in text)
                 {
-                    this.SendKeys(_currentElement, new string( new[] { character }));
-                    this.Wait(TimeSpan.FromMilliseconds(20));
+                    var key = new string(new[] { character });
+                    currentElement.SendKeys(key);
+                    Wait(TimeSpan.FromMilliseconds(20));
                 }
             });
         }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Draki.Tests.Actions
 {
@@ -15,7 +11,7 @@ namespace Draki.Tests.Actions
             InputsPage.Go();
 
             I.Focus(InputsPage.TextControlSelector)
-             .Press("{TAB}")
+             .Press(Key.TAB)
              .Type("wat")
              .Assert.Text("wat").In(InputsPage.TextareaControlSelector);
         }

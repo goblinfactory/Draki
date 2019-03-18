@@ -52,7 +52,7 @@ namespace Draki.Interfaces
         void WaitUntil(Expression<Action> conditionAction);
         void WaitUntil(Expression<Action> conditionAction, TimeSpan timeout);
 
-        void Press(string keys);
+        void Press(params Key[] keys);
         void Type(string text);
 
         void SwitchToFrame(string frameName);

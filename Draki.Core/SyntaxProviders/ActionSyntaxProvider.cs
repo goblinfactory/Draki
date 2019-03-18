@@ -342,7 +342,7 @@ namespace Draki
             return this.Append(nonString.ToString());
         }
 
-        public IActionSyntaxProvider Press(string keys)
+        public IActionSyntaxProvider Press(params Key[] keys)
         {
             commandProvider.Press(keys);
             return this;

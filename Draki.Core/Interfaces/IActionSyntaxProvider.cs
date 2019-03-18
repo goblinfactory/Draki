@@ -216,10 +216,11 @@ namespace Draki.Interfaces
         IActionSyntaxProvider Open(Uri uri);
 
         /// <summary>
-        /// Triggers keypress events using WinForms SendKeys.
+        /// Triggers special Selenium keypresses.
         /// </summary>
-        /// <param name="keys">WinForms SendKeys values. Example: <c>{ENTER}</c></param>
-        IActionSyntaxProvider Press(string keys);
+        /// <param name="keys">SendKeys values. Example: <c>{TAB}</c></param>
+        /// <example>Supported keys {ENTER},{TAB}</example>
+        IActionSyntaxProvider Press(params Key[] keys);
 
         /// <summary>
         /// Manipulates a <c>&lt;select /></c> DOM element by selecting options with matching <paramref name="values"/> using the specified <paramref name="mode"/>.
