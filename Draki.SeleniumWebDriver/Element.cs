@@ -111,8 +111,10 @@ namespace Draki
                 switch (this.TagName)
                 {
                     case "input":
-                        switch (this.Attributes.Get("type").ToLower())
+                        var inputType = this.Attributes.Get("type").ToLower();
+                        switch (inputType)
                         {
+                            case "file":
                             case "text":
                             case "email":
                             case "search":

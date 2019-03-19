@@ -460,19 +460,14 @@ namespace Draki
 
         public void UploadFile(ElementProxy element, string fileName)
         {
-            this.Act(CommandType.Action, () =>
+            Act(CommandType.Action, () =>
             {
-                // wait before typing in the field
-                var task = Task.Factory.StartNew(() =>
-                {
-                    this.Wait(TimeSpan.FromMilliseconds(1000));
-                    this.Type(fileName);
-                });
-
-                this.Click(element);
-
-                task.Wait();
-                this.Wait(TimeSpan.FromMilliseconds(1500));
+                Focus(element);
+                var currentElement = webDriver.SwitchTo().ActiveElement();
+                currentElement.SendKeys(fileName);
+                currentElement.SendKeys(Key.ENTER.ToSeleniumKey());
+                Wait(TimeSpan.FromMilliseconds(1500));
+                
             });
         }
 

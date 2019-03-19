@@ -11,16 +11,18 @@ namespace Draki.Tests.Actions
         public void UploadFileTest()
         {
             InputsPage.Go();
-            var fi = new FileInfo(Assembly.GetExecutingAssembly().Location);
-            var file = Path.Combine(fi.Directory.FullName, "Draki.Tests.dll.config");
-            if (!File.Exists(file)) Assert.Inconclusive($"Could not find file to upload:{file}");
-            // e.g. C:/src/git-alan-public/Draki/Draki.Tests/bin/Debug/Draki.Tests.dll.config
+            var path = GetPath();
+            I.Enter(path).In("input[type='file']");
+            I.Click("#doUpload");
+            I.WaitUntil(() => I.Expect.Text("Upload results").In("h2"));
+        }
 
-            // do I need to run with elevated priveledges to execute this test?
-            var upload = "input[type='file']";
-            I.Upload(upload, file);
-            I.Expect.Text("Upload results").In("h2");
-            //I.Expect.Text("File saved to").In("p.upload-results");
+        private string GetPath()
+        {
+            var fi = new FileInfo(Assembly.GetExecutingAssembly().Location);
+            var fullpath = Path.Combine(fi.Directory.FullName, "Draki.Tests.dll.config");
+            if (!File.Exists(fullpath)) Assert.Inconclusive($"Could not find file to upload:{fullpath}");
+            return fullpath;
         }
     }
 }
