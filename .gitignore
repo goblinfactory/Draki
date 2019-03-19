@@ -57,4 +57,5 @@ node_modules
 Docs/node_modules
 *-wrapped.html
 Draki.SeleniumWebDriver/3rdPartyLib/chromedriver.exe
+FluentAutomation.TestApplication/App_Data/*
 .vs
