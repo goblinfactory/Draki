@@ -458,16 +458,12 @@ namespace Draki
             });
         }
 
-        public void UploadFile(ElementProxy element, string fileName)
+        public void UploadFile(ElementProxy chooseFileElement, ElementProxy submitButtonElement, string fileName)
         {
             Act(CommandType.Action, () =>
             {
-                Focus(element);
-                var currentElement = webDriver.SwitchTo().ActiveElement();
-                currentElement.SendKeys(fileName);
-                currentElement.SendKeys(Key.ENTER.ToSeleniumKey());
-                Wait(TimeSpan.FromMilliseconds(1500));
-                
+                EnterText(chooseFileElement, fileName);
+                Click(submitButtonElement);
             });
         }
 

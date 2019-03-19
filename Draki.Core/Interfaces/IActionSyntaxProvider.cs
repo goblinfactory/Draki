@@ -64,20 +64,6 @@ namespace Draki.Interfaces
         IActionSyntaxProvider Hover(ElementProxy element);
 
         /// <summary>
-        /// Upload a file via a standard <c><input type='file'></input></c> DOM element.
-        /// </summary>
-        /// <param name="element"></param>
-        /// <param name="fileName">Path to the local file to be uploaded. Example: <c>C:\Users\Public\Pictures\Sample Pictures\Chrysanthemum.jpg</c></param>
-        IActionSyntaxProvider Upload(ElementProxy element, string fileName);
-
-        /// <summary>
-        /// Uploads a file via a standard <c><input type='file'></input></c> DOM element.
-        /// </summary>
-        /// <param name="selector">Selector for the <c><input type='file'></input></c> DOM element.</param>
-        /// <param name="fileName">Path to the local file to be uploaded. Example: <c>C:\Users\Public\Pictures\Sample Pictures\Chrysanthemum.jpg</c></param>
-        IActionSyntaxProvider Upload(string selector, string fileName);
-
-        /// <summary>
         /// Wait until the provided <paramref name="conditionAction">action</paramref> succeeds. Intended for use with I.Expect.* methods.
         /// </summary>
         /// <param name="conditionAction">Action to be repeated until it succeeds or exceeds the timeout. <see cref="Settings.DefaultWaitUntilTimeout"/> determines the timeout.</param>

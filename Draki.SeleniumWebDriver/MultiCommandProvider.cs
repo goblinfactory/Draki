@@ -164,11 +164,6 @@ namespace Draki
             this.RepackExceptions(() => Parallel.ForEach(this.commandProviders, x => x.TakeScreenshot(screenshotName)));
         }
 
-        public void UploadFile(ElementProxy element, string fileName)
-        {
-            this.RepackExceptions(() => Parallel.ForEach(element.Elements, e => e.Item1.UploadFile(new ElementProxy(e.Item1, e.Item2), fileName)));
-        }
-
         public void Wait()
         {
             this.commandProviders.First().Wait();

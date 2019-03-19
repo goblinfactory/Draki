@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Draki.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,5 +48,12 @@ namespace Draki.Tests.Pages
         public string TextTelControlSelector = "#text-tel-control";
         public string TextNumberControlSelector = "#text-number-control";
         public string TextPasswordControlSelector = "#text-password-control";
+
+        public IActionSyntaxProvider UploadFile(string file)
+        {
+            I.Enter(file).In("input[type='file']");
+            I.Click("#doUpload");
+            return this.I;
+        }
     }
 }

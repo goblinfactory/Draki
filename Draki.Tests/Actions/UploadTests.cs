@@ -10,11 +10,12 @@ namespace Draki.Tests.Actions
         [Category(Category.SLOW)]
         public void UploadFileTest()
         {
-            InputsPage.Go();
             var path = GetPath();
-            I.Enter(path).In("input[type='file']");
-            I.Click("#doUpload");
-            I.WaitUntil(() => I.Expect.Text("Upload results").In("h2"));
+
+            InputsPage
+                .Go()
+                .UploadFile(path)
+                .WaitUntil(() => I.Expect.Text("Upload results").In("h2"));
         }
 
         private string GetPath()

@@ -202,17 +202,6 @@ namespace Draki
             return this;
         }
 
-        public IActionSyntaxProvider Upload(string selector, string fileName)
-        {
-            return this.Upload(this.Find(selector), fileName);
-        }
-
-        public IActionSyntaxProvider Upload(ElementProxy element, string fileName)
-        {
-            this.commandProvider.UploadFile(element, fileName);
-            return this;
-        }
-
         private SwitchSyntaxProvider switchProvider = null;
         public SwitchSyntaxProvider Switch
         {

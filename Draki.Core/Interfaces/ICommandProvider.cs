@@ -43,8 +43,6 @@ namespace Draki.Interfaces
 
         void TakeScreenshot(string screenshotName);
 
-        void UploadFile(ElementProxy element, string fileName);
-
         void Wait();
         void Wait(TimeSpan timeSpan);
         void WaitUntil(Expression<Func<bool>> conditionFunc);
