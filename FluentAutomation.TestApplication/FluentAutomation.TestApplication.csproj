@@ -135,7 +135,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\vue.2.6.6.js" />
-    <Content Include="Views\Switch\app-switch.js" />
+    <Content Include="Scripts\src\app-switch.js" />
     <Content Include="Content\style-text.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
