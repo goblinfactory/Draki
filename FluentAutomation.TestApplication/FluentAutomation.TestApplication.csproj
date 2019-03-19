@@ -109,12 +109,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\style-dragdrop.css" />
     <Content Include="Content\style-menus.css" />
     <Content Include="Content\style-input.css" />
     <Content Include="Content\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\src\app-dragdrop.js" />
     <Content Include="Scripts\src\MyApp.js" />
     <Content Include="Global.asax" />
     <Content Include="knowledge-base.md" />
@@ -137,6 +139,7 @@
     <Content Include="Scripts\vue.2.6.6.js" />
     <Content Include="Scripts\src\app-switch.js" />
     <Content Include="Content\style-text.css" />
+    <Content Include="img\pdf-religion.png" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />

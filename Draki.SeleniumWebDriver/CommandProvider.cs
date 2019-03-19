@@ -294,6 +294,7 @@ namespace Draki
                     .ClickAndHold()
                     .MoveToElement(targetElement.WebElement, targetOffsetX, targetOffsetY)
                     .Release()
+                    .Build()
                     .Perform();
             });
         }
@@ -307,6 +308,7 @@ namespace Draki
 
                 new Actions(this.webDriver)
                     .DragAndDrop(unwrappedSource.WebElement, unwrappedTarget.WebElement)
+                    .Build()
                     .Perform();
             });
         }
