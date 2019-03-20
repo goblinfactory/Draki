@@ -1,20 +1,18 @@
-﻿#conference1, #conference2, #boarder1, #boarder2 {
+﻿#conference1, #conference2, #conference3 {
     border: 1px solid black;
     margin: 15px;
     height: 227px;
     width: 250px;
     padding:10px;
-    background-color: aliceblue;
+    background-color: rgb(205, 226, 241);
     float:left;
 }
-
-#drag2 { 
-    background-color:navy;
-}
-
-#boarder2 { background-color:cornflowerblue; }
 
 #conferences, #attendees {
     display:inline-block;
     width:100%;
+}
+
+.boarder { 
+    cursor:move;
 }

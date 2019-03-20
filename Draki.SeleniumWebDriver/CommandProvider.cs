@@ -305,11 +305,23 @@ namespace Draki
             {
                 var unwrappedSource = source.Element as Element;
                 var unwrappedTarget = target.Element as Element;
+                var drag = unwrappedSource.WebElement;
+                var drop = unwrappedTarget.WebElement;
+
+                //new Actions(this.webDriver)
+                //    .DragAndDrop(unwrappedSource.WebElement, unwrappedTarget.WebElement)
+                //    .Build()
+                //    .Perform();
+
+                //new Actions(this.webDriver)
+                //.ClickAndHold(drag).MoveToElement(drop).Release().Build().Perform();
 
                 new Actions(this.webDriver)
                     .DragAndDrop(unwrappedSource.WebElement, unwrappedTarget.WebElement)
-                    .Build()
                     .Perform();
+
+                //.Build()
+                //.Perform();
             });
         }
 

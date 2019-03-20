@@ -114,6 +114,7 @@
     <Content Include="Content\style-input.css" />
     <Content Include="Content\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\snowcode.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\src\app-dragdrop.js" />
@@ -139,7 +140,6 @@
     <Content Include="Scripts\vue.2.6.6.js" />
     <Content Include="Scripts\src\app-switch.js" />
     <Content Include="Content\style-text.css" />
-    <Content Include="img\pdf-religion.png" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -175,6 +175,7 @@
     <Content Include="Views\LinkTarget\Index.cshtml" />
     <Content Include="Views\Inputs\Upload.cshtml" />
     <Content Include="Views\Menus\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

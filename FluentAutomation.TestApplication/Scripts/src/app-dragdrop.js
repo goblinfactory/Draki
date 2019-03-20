@@ -1,13 +1,17 @@
-﻿function ddAllowDrop(ev) {
+﻿function enableDrop(ev) {
     ev.preventDefault();
 }
 
-function ddDrag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+function dragStart(ev) {
+    var id = ev.currentTarget.id;
+    ev.dataTransfer.setData('boarderId', id);
+
 }
 
-function ddDrop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+function dragDrop(ev) {
+    var boarderId = ev.dataTransfer.getData('boarderId');
+    var boarder = document.getElementById(boarderId);
+    var conference = ev.currentTarget;
+    //var conference = document.getElementById(conferenceId);
+    conference.appendChild(boarder);
 }

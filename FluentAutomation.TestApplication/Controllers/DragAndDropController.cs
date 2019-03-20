@@ -12,7 +12,7 @@ namespace Draki.TestApplication.Controllers
         // GET: /DragAndDrop/
         public ActionResult Index()
         {
-            return View();
+            return View("Index","_Layout2");
         }
 	}
 }

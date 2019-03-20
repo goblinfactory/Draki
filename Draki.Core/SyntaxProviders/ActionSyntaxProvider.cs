@@ -313,8 +313,8 @@ namespace Draki
             /// <param name="targetElement">IElement factory function.</param>
             public IActionSyntaxProvider To(ElementProxy targetElement)
             {
-                this.syntaxProvider.commandProvider.DragAndDrop(this.sourceElement, targetElement);
-                return this.syntaxProvider;
+                syntaxProvider.commandProvider.DragAndDrop(sourceElement, targetElement);
+                return syntaxProvider;
             }
         }
 

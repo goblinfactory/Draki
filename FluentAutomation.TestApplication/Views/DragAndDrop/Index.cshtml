@@ -1,14 +1,17 @@
-﻿@{ ViewBag.Title = "Drag and Drop"; }
-
+﻿@{ 
+    ViewBag.Title = "Drag and Drop"; 
+}
 <h2>Drag and Drop Testbed</h2>
-<link href="~/Content/style-dragdrop.css" rel="stylesheet" />
-<script src="~/Scripts/src/app-dragdrop.js"></script>
+<script src="~/Scripts/src/app-dragdrop.js?v=0.0.013"></script>
+<link href="~/Content/style-dragdrop.css?v=0.01" rel="stylesheet" />
 <p>Drag the snowboarder to the developer conference</p>
 <div id="conferences">
-    <div id="conference1" ondrop="ddDrop(event)" ondragover="ddAllowDrop(event)">Open source on the snow, Val D'isere France January 2020</div>
-    <div id="conference2" ondrop="ddDrop(event)" ondragover="ddAllowDrop(event)">Geekski dev party - Morzine, France, March 2020</div>
+    <div id="conference1" ondrop="dragDrop(event)" ondragover="enableDrop(event)">Open source on the snow, Val D'isere France January 2020</div>
+    <div id="conference2" ondrop="dragDrop(event)" ondragover="enableDrop(event)">Geekski dev party - Morzine, France, March 2020</div>
+    <div id="conference3" ondrop="dragDrop(event)" ondragover="enableDrop(event)">Co-living, coworking "geek on snow", La Rosiere, Fance Dec 2019 to May 2020</div>
 </div>
 <div id="attendees">
-    <img id="boarder1" src="~/img/snowcode.png" draggable="true" ondragstart="ddDrag(event)" height="227" width="250">
-    <img id="boarder2" src="~/img/snowcode.png" draggable="true" ondragstart="ddDrag(event)" height="227" width="250">
+    <img id="boarder1" class="boarder" src="~/img/snowcode.png" draggable="true" ondragstart="dragStart(event)" height="227" width="250" />
+    <img id="boarder2" class="boarder" src="~/img/snowcode.png" draggable="true" ondragstart="dragStart(event)" height="227" width="250" />
+    <img id="boarder3" class="boarder" src="~/img/snowcode.png" draggable="true" ondragstart="dragStart(event)" height="227" width="250" />
 </div>
