@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Draki.Tests.Pages;
 using NUnit.Framework;
 
 namespace Draki.Tests.Actions
@@ -17,9 +18,9 @@ namespace Draki.Tests.Actions
         {
             TextPage.Go();
 
-            I.Assert.Css("color", InputsPage.HoverColor).Not.On(TextPage.TitleSelector);
-            I.Hover(TextPage.TitleSelector)
-             .Assert.Css("color", InputsPage.HoverColor).On(TextPage.TitleSelector);
+            I.Assert.Css("color", Colors.RED).Not.On(TextPage.TitleSelector);
+            I.Hover(TextPage.TitleSelector);
+            I.Assert.Css("color", Colors.RED).On(TextPage.TitleSelector);
         }
 
         [Test]
@@ -27,9 +28,9 @@ namespace Draki.Tests.Actions
         {
             TextPage.Go();
 
-            I.Assert.Css("color", InputsPage.HoverColor).Not.On(TextPage.Link1Selector);
+            I.Assert.Css("color", Colors.RED).Not.On(TextPage.Link1Selector);
             I.Hover(TextPage.Link1Selector)
-             .Assert.Css("color", InputsPage.HoverColor).On(TextPage.Link1Selector);
+             .Assert.Css("color", Colors.RED).On(TextPage.Link1Selector);
         }
 
         [Test]
@@ -38,13 +39,13 @@ namespace Draki.Tests.Actions
         {
             InputsPage.Go();
 
-            I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.TextControlSelector);
+            I.Assert.Css("color", Colors.RED).Not.On(InputsPage.TextControlSelector);
             I.Hover(InputsPage.TextControlSelector)
-             .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.TextControlSelector);
+             .Assert.Css("color", Colors.RED).On(InputsPage.TextControlSelector);
 
-            I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.TextareaControlSelector);
+            I.Assert.Css("color", Colors.RED).Not.On(InputsPage.TextareaControlSelector);
             I.Hover(InputsPage.TextareaControlSelector)
-             .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.TextareaControlSelector);
+             .Assert.Css("color", Colors.RED).On(InputsPage.TextareaControlSelector);
         }
 
         [Test]
@@ -52,9 +53,9 @@ namespace Draki.Tests.Actions
         {
             InputsPage.Go();
 
-            I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.InputButtonControlSelector);
+            I.Assert.Css("color", Colors.RED).Not.On(InputsPage.InputButtonControlSelector);
             I.Hover(InputsPage.InputButtonControlSelector)
-             .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.InputButtonControlSelector);
+             .Assert.Css("color", Colors.RED).On(InputsPage.InputButtonControlSelector);
         }
 
         [Test]
@@ -62,9 +63,9 @@ namespace Draki.Tests.Actions
         {
             InputsPage.Go();
 
-            I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.ButtonControlSelector);
+            I.Assert.Css("color", Colors.RED).Not.On(InputsPage.ButtonControlSelector);
             I.Hover(InputsPage.ButtonControlSelector)
-             .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.ButtonControlSelector);
+             .Assert.Css("color", Colors.RED).On(InputsPage.ButtonControlSelector);
         }
 
         /// <summary>
@@ -100,9 +101,9 @@ namespace Draki.Tests.Actions
         public void Scroll()
         {
             InputsPage.Go();
-            I.Assert.Css("color", InputsPage.HoverColor).Not.On(InputsPage.ButtonControlSelector);
+            I.Assert.Css("color", Colors.RED).Not.On(InputsPage.ButtonControlSelector);
             I.Scroll(InputsPage.ButtonControlSelector)
-             .Assert.Css("color", InputsPage.HoverColor).On(InputsPage.ButtonControlSelector);
+             .Assert.Css("color", Colors.RED).On(InputsPage.ButtonControlSelector);
 
             ScrollingPage.Go();
 

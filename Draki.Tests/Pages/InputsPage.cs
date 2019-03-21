@@ -39,7 +39,6 @@ namespace Draki.Tests.Pages
 
         public string HiddenDivSelector = "#hidden-div";
 
-        public string HoverColor = Colors.RED;
         public string ButtonFocusColor = Colors.SILVER;
 
         public string TextEmailControlSelector = "#text-email-control";

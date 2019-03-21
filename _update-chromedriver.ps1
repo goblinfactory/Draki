@@ -3,11 +3,15 @@
 # e.g. 2.37 from -> https://chromedriver.storage.googleapis.com/index.html?path=2.37/
 # ------------------------------------------------------------------------------------
 
-$res = Invoke-WebRequest "https://sites.google.com/a/chromium.org/chromedriver/downloads"
+$res = Invoke-WebRequest "https://sites.google.com/a/chromium.org/chromedriver/downloads" -UseBasicParsing
 $url = ($res.Links | Where-Object -property href -match "^https://chromedriver.storage.googleapis.com/index.html\?path=" | select -property href)[0].href
 
 $seperator = @("?path=")
-$ver = $url.Split($seperator, [System.StringSplitOptions]::RemoveEmptyEntries)[1]
+
+# hard coding version for now because chrome is ver 73 and website says ver 74! mmm, that just happened.
+# $ver = $url.Split($seperator, [System.StringSplitOptions]::RemoveEmptyEntries)[1]
+$ver = "73.0.3683.68/"
+
 
 $file = "https://chromedriver.storage.googleapis.com/" + $ver + "chromedriver_win32.zip"
 write-host "downloading $file"

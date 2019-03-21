@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### changed
 
-- move to dotnetcore - TBD.
-- updated selenium drivers
+- now supporting latest Chrome drivers `ChromeDriver 73.0.3683.68`
+- move to dotnetcore
 - removed Winforms sendkeys, replaced with Selenium.Sendkeys.
 
 ### added
