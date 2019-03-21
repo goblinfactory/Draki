@@ -18,8 +18,8 @@ namespace Draki.Tests.Asserts
             I.Assert.Count(1).Of("h2");
             I.Expect.Count(1).Of("h2");
 
-            I.Assert.Count(10).Of("input");
-            I.Expect.Count(10).Of("input");
+            I.Assert.Count(13).Of("input");
+            I.Expect.Count(13).Of("input");
 
             I.Assert
              .Count(0).Not.Of("div")
