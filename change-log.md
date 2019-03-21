@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - now supporting latest Chrome drivers `ChromeDriver 73.0.3683.68`
 - move to dotnetcore
 - removed Winforms sendkeys, replaced with Selenium.Sendkeys.
+- add an assertInconclusive placeholder test for HTML5 drag and drop showing the issues with ChromeDriver and drag and drop.
 
 ### added
 
