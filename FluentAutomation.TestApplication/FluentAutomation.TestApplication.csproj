@@ -118,7 +118,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\src\app-dragdrop.js" />
-    <Content Include="Scripts\src\MyApp.js" />
     <Content Include="Global.asax" />
     <Content Include="knowledge-base.md" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -162,6 +161,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +175,6 @@
     <Content Include="Views\LinkTarget\Index.cshtml" />
     <Content Include="Views\Inputs\Upload.cshtml" />
     <Content Include="Views\Menus\Index.cshtml" />
-    <Content Include="Views\Shared\_Layout2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

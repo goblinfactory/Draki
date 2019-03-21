@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - FluentAutomation Testbed</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    @*<script src="~/Scripts/vue.2.6.6.js"></script>*@
     <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -25,17 +24,6 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Home</a></li>
-                        <li v-cloak v-if="loggedIn"><a href="#" v-on:click="logout">Log out</a></li>
-                        <li v-cloak v-if="loggedIn" class="loggedin" ><a>Logged in</a></li>
-                        <li v-cloak v-if="!loggedIn && !showLogin"><a href="#" v-on:click="showLoginForm" v-cloak>Log in</a></li>
-                        <li v-cloak v-if="showLogin"><a href="#" v-on:click="cancelLogin" v-cloak>Cancel</a></li>
-                        <li v-cloak v-if="showLogin">
-                            <div id="login" class="login">
-                                <label for="username">username</label> <input type="text" placeholder="guest" width="10" v-model="username" /><br />
-                                <label for="password">password</label> <input type="password" placeholder="1234" v-model="password" />
-                                <input type="submit" v-on:click="dologin" value="login" />
-                            </div>
-                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -45,6 +33,5 @@
         </div>
     </div>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/src/MyApp.js?ver=1.1"></script>
 </body>
 </html>
