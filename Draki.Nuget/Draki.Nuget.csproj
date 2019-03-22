@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>Draki</AssemblyName>
+    <RootNamespace>Draki</RootNamespace>
+    <Version>2.0.0.1-alpha</Version>
+    <Authors>Alan Hemmings</Authors>
+    <Company>Goblinfactory Ltd</Company>
+    <Description>Draki fluent web automation : write robust web automation scripts. Use for requirement verification, smoke tests, acceptance tests, you name it, Draki does it.</Description>
+    <Copyright>Copyright (c) Goblinfactory Limited 2019, Copyright (c) 2013 Brandon Stirnaman</Copyright>
+    <PackageLicenseUrl>https://github.com/goblinfactory/Draki/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/goblinfactory/Draki</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/goblinfactory/Draki</RepositoryUrl>
+    <RepositoryType>GITHUB</RepositoryType>
+    <PackageTags>testing</PackageTags>
+    <PackageReleaseNotes>draft conversion to dotnetcore. SeleniumWebDriver remains unchanged, this is just the changes to the fluent wrapper library.</PackageReleaseNotes>
+    <AssemblyVersion>2.0.0.1</AssemblyVersion>
+    <FileVersion>2.0.0.1</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Draki.Core\Draki.Core.csproj" />
+    <ProjectReference Include="..\Draki.SeleniumWebDriver\Draki.SeleniumWebDriver.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.0-beta</Version>
+    <Authors>Alan Hemmings</Authors>
+    <Company>Goblinfactory Limited</Company>
+    <Description>Simple and rapid critical path smoke testing for web apps - Make it so easy to write a functional smoke test for your web application that there's no excuse not to!</Description>
+    <PackageLicenseUrl>https://github.com/goblinfactory/Draki/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/goblinfactory/Draki</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/goblinfactory/Draki</RepositoryUrl>
+    <PackageTags>Selenium WatiN TestAutomation BDD TDD SmokeTesting FunctionalTesting API Angular React AcceptanceTests</PackageTags>
+    <PackageReleaseNotes>Move to dotnet core.</PackageReleaseNotes>
+    <AssemblyVersion>2.0.0.1</AssemblyVersion>
+    <FileVersion>2.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Busy
 
+- Single package, Draki. Get up and running with just one package.
 - migrate sample website from asp.net MVC to ASP.NET Core MVC so that we can run the website and test it using kestrel via dotnet run. 
   - notes here : https://docs.microsoft.com/en-us/aspnet/core/migration/mvc?view=aspnetcore-2.2
 
