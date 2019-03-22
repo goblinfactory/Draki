@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Draki.Tests.Internal;
 using NUnit.Framework;
 
 namespace Draki.Tests
@@ -26,13 +27,7 @@ namespace Draki.Tests
         {
             throw new NotImplementedException("this will not work until the TestApplication website has been migrated to ASP.NET Core MVC.");
             _wwwDir = GetWebsiteDir();
-            ProcessStartInfo info = new ProcessStartInfo("dotnet", "run");
-            info.RedirectStandardError = true;
-            info.RedirectStandardInput = true;
-            info.RedirectStandardOutput = true;
-            info.UseShellExecute = false;
-            info.WorkingDirectory = _wwwDir;
-            kestrel = Process.Start(info);
+            kestrel = ProcessRunner.StartProcess("dotnet", "run", _wwwDir);
         }
 
         [OneTimeTearDown]
