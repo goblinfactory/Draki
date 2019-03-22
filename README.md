@@ -56,7 +56,7 @@ public class RunOnceBeforeAllTests
 {
     [OneTimeSetUp]
     public void Setup(){
-
+		FluentSession.EnableStickySession();
         Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
         SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome);
     }
@@ -161,6 +161,7 @@ Remember to always use positive confirmation to check your precondiions using th
 
 #### 8) Now that you're familiar with the basics it's time to kick this party up a notch!
 
+Update : **alpha draft convertion to dotnet core does not currently support multiple browsers. After the latest port to dotnet core is stable will finish the tests and migration for multibrowser.**
 Run your tests simultaneously in both Firefox and Chrome and IE and record screenshots of any errors along the way:
 
 ```csharp
@@ -169,28 +170,13 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 
 ### How is Draki different to simply using Selenium directly?
 
-- TBD (need link to seperate document for this!)
-
-### Upgrading from an earlier version of Draki
-
-1. manually delete the existing draki packages from your solution package folders
-1. delete the package references from each project's `packages.config` file.
-1. delete the following packages references as well, whichever versions they are
-```xml
-      <package id="Selenium.Support" version="2.41.0" targetFramework="net45" />`
-       <package id="Selenium.WebDriver" version="2.41.0" targetFramework="net45" />
-```
-1. re-install the Draki packages 
-   `install-package draki.core`
-   `install-package draki.seleniumwebdriver`
-1. rebuild your sln or project and then manually check in your `bin\debug` or `bin\release` folder that the version of `Draki` assemblies are correct and the latest. If they are not, then your nuget settings in visual studio have fetch a cached package somewhere. Download the package manually from nuget and use the `-source` option e.g. `install-package draki.core -source c:\mytemp\Draki.Core.0.1.0.3.nupkg` to install `Draki`. do this for both `draki.core` and `draki.seleniumwebdriver`.
+- busy with the docs for this now.
 
 ### Building the solution and running the unit tests
 
-1. run `update-chrome-driver.ps1` to download and unpack (unzip) the latest chrome driver.
 1. build the solution
-1. right click on the test project `FluentAutomation.TestApplication` and select `View -> in browser`. This will start iisexpress.
-1. Run or debug any unit test you want to.
+1. right click on the test project `FluentAutomation.TestApplication` and select `View -> in browser`. This will start IIS Express. (I am busy migrating the demo site to ASP.NET core MVC and will switch to `dotnet run` shortly.)
+1. Run all the unit tests in `Draki.Tests`. The tests do not run in headless mode, makes it easier to stop and debug when extending the test website.
 
 ### how is this different from FluentAutomation?
 

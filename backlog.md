@@ -5,6 +5,7 @@
 - take a look at https://github.com/jbaranda/nupkg-selenium-webdrivers
   and see if that avoids having to embed the drivers,
   or if thats just doing the same thing in a more roundabout way. 
+- go to : https://github.com/stirno/FluentAutomation/issues and see if I can write tests for these, and if any issues are serious or fixed or need to be brought into this project.
 
 ## unsorted
 
