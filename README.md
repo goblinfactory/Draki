@@ -183,6 +183,7 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 - See https://github.com/goblinfactory/Draki/issues for list of known issues. I will update this readme with the most critical issues that may impact your ability to use the project. (of course ymmv)
 - Currently only Chrome driver has tests.
 - Multibrowser, i.e. ability to run parallel tests, e.g. five chrome, and three firefox, all in the same test is disabled, some features not implemented or migrated to dotnet core yet. Busy with this.
+- using Draki from a .NET core project will mean you must stop chromedriver with a OneTimeTeardown. This is not needed with .NET Framework projects. (busy investigating. My Guess is that it could be a TinyIOC lifetime issue.)
 
 ### Using Draki in any sensitive project
 
