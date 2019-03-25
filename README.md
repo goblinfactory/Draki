@@ -58,7 +58,7 @@ public class RunOnceBeforeAllTests
     public void Setup(){
 		FluentSession.EnableStickySession();
         Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
-        SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome);
+        SeleniumWebDriver.Bootstrap(Browser.Chrome);
     }
 }
 ```
@@ -178,6 +178,23 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 1. right click on the test project `FluentAutomation.TestApplication` and select `View -> in browser`. This will start IIS Express. (I am busy migrating the demo site to ASP.NET core MVC and will switch to `dotnet run` shortly.)
 1. Run all the unit tests in `Draki.Tests`. The tests do not run in headless mode, makes it easier to stop and debug when extending the test website.
 
+### Known issues
+
+- See https://github.com/goblinfactory/Draki/issues for list of known issues. I will update this readme with the most critical issues that may impact your ability to use the project. (of course ymmv)
+- Currently only Chrome driver has tests.
+- Multibrowser, i.e. ability to run parallel tests, e.g. five chrome, and three firefox, all in the same test is disabled, some features not implemented or migrated to dotnet core yet. Busy with this.
+
+### Using Draki in any sensitive project
+
+1. We strongly recommend you fork the project and build and create your own package due the (currently unavoidable) requirement to embed the actual web driver executables (chromedriver.exe, IEDriverServer32.exe and IEDriverServer64.exe.) See `_update-chromedriver.ps1`
+2. make sure that you are able to code review and regularly merge in updates to your fork. i.e. recommendation is not to refactor the project. Submit requests for improvements as pull requests to the open source project and merge them back in to your fork.
+3. When creating your own package, download the chromedriver.exe yourself, verify it's hashcode and scan for malware before adding it to your internal package server. Sign if necessary.
+4. Make sure you are able to have a 'fixed' (static) version of chrome on your build agents in the event that a chrome update comes out and impacts you before the open source project can be updated with a patch.
+
+### How is this different to just using SeleniumDriver directly in C#?
+
+- TBD 
+
 ### how is this different from FluentAutomation?
 
 * Draki is a derived clone of [FluentAutomation](https://github.com/stirno/FluentAutomation) with some updated drivers and simplified tests so that it can be more easily kept up to date with Selenium changes.
@@ -190,4 +207,3 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 ### useful references
 
 * https://www.automatetheplanet.com/selenium-webdriver-csharp-cheat-sheet/
-

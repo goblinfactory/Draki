@@ -25,7 +25,7 @@ namespace Draki.Tests
             SwitchPage = new Pages.SwitchPage(this);
             
             // Default tests use chrome and load the site
-            SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome);//, SeleniumWebDriver.Browser.InternetExplorer, SeleniumWebDriver.Browser.Firefox);
+            SeleniumWebDriver.Bootstrap(Browser.Chrome);//, Browser.InternetExplorer, Browser.Firefox);
             I.Open(SiteUrl);
         }
 

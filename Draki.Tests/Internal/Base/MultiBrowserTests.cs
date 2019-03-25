@@ -15,7 +15,7 @@ namespace Draki.Tests.Base
         [Test,Ignore("manual for now until I ensure I can test everything on Appveyor")]
         public void AssertShouldFailTest()
         {
-            SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome, SeleniumWebDriver.Browser.Firefox);
+            SeleniumWebDriver.Bootstrap(Browser.Chrome, Browser.Firefox);
 
             Assert.Throws<FluentException>(() =>
             {

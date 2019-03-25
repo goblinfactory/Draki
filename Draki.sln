@@ -14,6 +14,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAF96386-9D96-456C-AFAE-8385E1B61CAB}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		_copy_nugets.ps1 = _copy_nugets.ps1
+		_make-nuget.ps1 = _make-nuget.ps1
+		_start-site.ps1 = _start-site.ps1
+		_update-chromedriver.ps1 = _update-chromedriver.ps1
 		backlog.md = backlog.md
 		change-log.md = change-log.md
 		LICENCE-TINYIOC.md = LICENCE-TINYIOC.md
@@ -37,11 +41,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A176
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draki.Core", "Draki.Core\Draki.Core.csproj", "{08758AE2-8B17-4CCC-AF04-034507804D76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draki.SeleniumWebDriver", "Draki.SeleniumWebDriver\Draki.SeleniumWebDriver.csproj", "{FF1CEEC4-62E3-4A87-96DC-20BC9CFD10E3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draki.TestWebsite", "Draki.TestWebsite\Draki.TestWebsite.csproj", "{0FF3EB3F-EF20-4C35-AD70-8C50D1D4F4C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draki.Nuget", "Draki.Nuget\Draki.Nuget.csproj", "{ACC313AD-58AC-4756-9ADF-06E48B4D7BE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDotnetCore", "TestDotnetCore\TestDotnetCore.csproj", "{085A0CD2-8F5D-412B-AEA8-CFBB9FFE8F62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDotNetFramework", "TestDotNetFramework\TestDotNetFramework.csproj", "{085DFCEE-8855-47B0-8CF7-F3307B82C443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,18 +65,18 @@ Global
 		{08758AE2-8B17-4CCC-AF04-034507804D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08758AE2-8B17-4CCC-AF04-034507804D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08758AE2-8B17-4CCC-AF04-034507804D76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF1CEEC4-62E3-4A87-96DC-20BC9CFD10E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF1CEEC4-62E3-4A87-96DC-20BC9CFD10E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF1CEEC4-62E3-4A87-96DC-20BC9CFD10E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF1CEEC4-62E3-4A87-96DC-20BC9CFD10E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FF3EB3F-EF20-4C35-AD70-8C50D1D4F4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FF3EB3F-EF20-4C35-AD70-8C50D1D4F4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF3EB3F-EF20-4C35-AD70-8C50D1D4F4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF3EB3F-EF20-4C35-AD70-8C50D1D4F4C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ACC313AD-58AC-4756-9ADF-06E48B4D7BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACC313AD-58AC-4756-9ADF-06E48B4D7BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACC313AD-58AC-4756-9ADF-06E48B4D7BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACC313AD-58AC-4756-9ADF-06E48B4D7BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{085A0CD2-8F5D-412B-AEA8-CFBB9FFE8F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085A0CD2-8F5D-412B-AEA8-CFBB9FFE8F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085A0CD2-8F5D-412B-AEA8-CFBB9FFE8F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085A0CD2-8F5D-412B-AEA8-CFBB9FFE8F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{085DFCEE-8855-47B0-8CF7-F3307B82C443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085DFCEE-8855-47B0-8CF7-F3307B82C443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085DFCEE-8855-47B0-8CF7-F3307B82C443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085DFCEE-8855-47B0-8CF7-F3307B82C443}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

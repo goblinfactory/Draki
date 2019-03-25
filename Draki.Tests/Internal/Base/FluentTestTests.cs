@@ -29,7 +29,7 @@ namespace Draki.Tests.Base
     {
         public MoreFluentTestTests()
         {
-            SeleniumWebDriver.Bootstrap(SeleniumWebDriver.Browser.Chrome);
+            SeleniumWebDriver.Bootstrap(Browser.Chrome);
 
             Config.MinimizeAllWindowsOnTestStart(true);
         }

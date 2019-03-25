@@ -121,10 +121,6 @@
       <Project>{08758ae2-8b17-4ccc-af04-034507804d76}</Project>
       <Name>Draki.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Draki.SeleniumWebDriver\Draki.SeleniumWebDriver.csproj">
-      <Project>{ff1ceec4-62e3-4a87-96dc-20bc9cfd10e3}</Project>
-      <Name>Draki.SeleniumWebDriver</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

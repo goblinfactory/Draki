@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net472;netcoreapp2.2</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0-beta</Version>
+    <Version>2.0.0.2-beta</Version>
     <Authors>Alan Hemmings</Authors>
     <Company>Goblinfactory Limited</Company>
     <Description>Simple and rapid critical path smoke testing for web apps - Make it so easy to write a functional smoke test for your web application that there's no excuse not to!</Description>
@@ -14,10 +14,33 @@
     <PackageReleaseNotes>Move to dotnet core.</PackageReleaseNotes>
     <AssemblyVersion>2.0.0.1</AssemblyVersion>
     <FileVersion>2.0.0.1</FileVersion>
+    <RootNamespace>Draki</RootNamespace>
+    <PackageId>Draki</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="3rdPartyLib\chromedriver.exe" />
+    <None Remove="3rdPartyLib\IEDriverServer32.exe" />
+    <None Remove="3rdPartyLib\IEDriverServer64.exe" />
+    <None Remove="Drivers\Selenium\3rdPartyLib\chromedriver.exe" />
+    <None Remove="Drivers\Selenium\3rdPartyLib\IEDriverServer32.exe" />
+    <None Remove="Drivers\Selenium\3rdPartyLib\IEDriverServer64.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="3rdPartyLib\chromedriver.exe" />
+    <EmbeddedResource Include="3rdPartyLib\IEDriverServer32.exe" />
+    <EmbeddedResource Include="3rdPartyLib\IEDriverServer64.exe" />
+    <EmbeddedResource Include="Drivers\Selenium\3rdPartyLib\chromedriver.exe" />
+    <EmbeddedResource Include="Drivers\Selenium\3rdPartyLib\IEDriverServer32.exe" />
+    <EmbeddedResource Include="Drivers\Selenium\3rdPartyLib\IEDriverServer64.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
   </ItemGroup>
 
 </Project>
