@@ -2,6 +2,7 @@
 
 ## TODO
 
+- remove the Page objects, replace with simpler static page helpers.
 - speak to community about chromedriver being embedded. Possibly move that to a seperate package, so you can either have the build script download chromedriver from google directly, or more obviously reference a package that just embeds the latest driver.
   - this package should really come from google, not a random person, not me, not someone in china? https://www.nuget.org/packages/Selenium.WebDriver.ChromeDriver/
 - take a look at https://github.com/jbaranda/nupkg-selenium-webdrivers
