@@ -6,11 +6,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Linqpad\**" />
+    <EmbeddedResource Remove="Linqpad\**" />
+    <None Remove="Linqpad\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="NUnit" Version="3.11.0" />
+    <PackageReference Include="SpecFlow" Version="2.4.1" />
+    <PackageReference Include="SpecFlow.NUnit" Version="2.4.1" />
+    <PackageReference Include="SpecFlow.NUnit.Runners" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Draki.Core\Draki.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\Pagination3.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pagination3.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Features\Pagination3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Pagination3.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
