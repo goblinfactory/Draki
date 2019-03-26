@@ -57,7 +57,7 @@ public class RunOnceBeforeAllTests
     [OneTimeSetUp]
     public void Setup(){
 		FluentSession.EnableStickySession();
-        Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
+        FluentConfig.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
         SeleniumWebDriver.Bootstrap(Browser.Chrome);
     }
 }
