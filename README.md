@@ -52,7 +52,7 @@ using Draki;
 using NUnit.Framework;
 
 [SetUpFixture]
-public class RunOnceBeforeAllTests
+public class RunOnceBeforeAllTests : FluentTest
 {
     [OneTimeSetUp]
     public void Setup(){
