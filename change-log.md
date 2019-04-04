@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [2.0]
 
 ### Busy
-- remove all references to SeleniumQA! Should not need to reference that to bootstrap driver.
+
+- remove all references to SeleniumQA! Should not need to reference that  to bootstrap driver.
 - Single package, Draki. Get up and running with just one package.
+- start and stop the test website necessary for running the tests.
 - migrate sample website from asp.net MVC to ASP.NET Core MVC so that we can run the website and test it using kestrel via dotnet run. 
   - notes here : https://docs.microsoft.com/en-us/aspnet/core/migration/mvc?view=aspnetcore-2.2
 - confirm that I.Expect actually throws assert inconclusive and can be used for precondition checks in Nunit. make a note to test with Xunit, don't think the concept exists in xunit?
