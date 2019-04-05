@@ -2,6 +2,7 @@
 
 ## TODO
 
+- move drivers, chrome and IE to separate package.
 - add chromedriver and IEDriver licences.
 - remove the Page objects, replace with simpler static page helpers.
 - speak to community about chromedriver being embedded. Possibly move that to a seperate package, so you can either have the build script download chromedriver from google directly, or more obviously reference a package that just embeds the latest driver.

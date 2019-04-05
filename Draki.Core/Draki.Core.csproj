@@ -4,8 +4,8 @@
     <TargetFrameworks>netstandard2.0;netcoreapp2.2;netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>2.0.0.3</Version>
-    <Title>Draki fluent web automation for C#</Title>
-    <Authors>Alan Hemmings</Authors>
+    <Title>Draki fluent web automation for C# (Latest and single replacement package for Draki.Core and Draki.SeleniumWebDriver.)</Title>
+    <Authors>goblinfactory</Authors>
     <Company>Goblinfactory Limited</Company>
     <Summary>Simple and fluent web automation - Make it so easy to write a range of tests from functional, smoke to acceptance tests for your web application that there's no excuse not to.</Summary>
     <Description>Simple and fluent web automation - Make it so easy to write a range of tests from functional, smoke to acceptance tests for your web application that there's no excuse not to.</Description>
@@ -16,6 +16,7 @@
     <FileVersion>2.0.0.3</FileVersion>
     <RootNamespace>Draki</RootNamespace>
     <PackageId>Draki</PackageId>
+    <Owners>goblinfactory</Owners>
     <RepositoryType>GIT</RepositoryType>
     <Copyright>Copyright (c) 2019 Goblinfactory Limited, parts of the code are Copyright (c) 2013 Brandon Stirnaman</Copyright>
     <Product>Draki</Product>
