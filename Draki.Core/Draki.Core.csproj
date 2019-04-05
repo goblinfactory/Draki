@@ -12,8 +12,8 @@
     <PackageProjectUrl>https://github.com/goblinfactory/Draki</PackageProjectUrl>
     <RepositoryUrl>https://github.com/goblinfactory/Draki</RepositoryUrl>
     <PackageReleaseNotes>Move to dotnet core.</PackageReleaseNotes>
-    <AssemblyVersion>2.0.0.3</AssemblyVersion>
-    <FileVersion>2.0.0.3</FileVersion>
+    <AssemblyVersion>2.0.0.31</AssemblyVersion>
+    <FileVersion>2.0.0.31</FileVersion>
     <RootNamespace>Draki</RootNamespace>
     <PackageId>Draki</PackageId>
     <Owners>goblinfactory</Owners>
