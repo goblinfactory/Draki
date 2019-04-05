@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp2.2;netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0.3</Version>
+    <Version>2.0.0.31</Version>
     <Title>Draki fluent web automation for C# (Latest and single replacement package for Draki.Core and Draki.SeleniumWebDriver.)</Title>
     <Authors>goblinfactory</Authors>
     <Company>Goblinfactory Limited</Company>

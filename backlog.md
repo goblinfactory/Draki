@@ -2,6 +2,8 @@
 
 ## TODO
 
+- create Draki gitter. Remove old.
+- create draki website.
 - move drivers, chrome and IE to separate package.
 - add chromedriver and IEDriver licences.
 - remove the Page objects, replace with simpler static page helpers.
