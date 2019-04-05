@@ -2,12 +2,13 @@
 
 ## TODO
 
+- treat warnings as errors, get to zero warnings.
 - create Draki gitter. Remove old.
 - create draki website.
 - move drivers, chrome and IE to separate package.
 - add chromedriver and IEDriver licences.
 - remove the Page objects, replace with simpler static page helpers.
-- speak to community about chromedriver being embedded. Possibly move that to a seperate package, so you can either have the build script download chromedriver from google directly, or more obviously reference a package that just embeds the latest driver.
+- speak to community (and Google now that I have a decent contact) about chromedriver being embedded. Possibly move that to a seperate package, so you can either have the build script download chromedriver from google directly, or more obviously reference a package that just embeds the latest driver.
   - this package should really come from google, not a random person, not me, not someone in china? https://www.nuget.org/packages/Selenium.WebDriver.ChromeDriver/
 - take a look at https://github.com/jbaranda/nupkg-selenium-webdrivers
   and see if that avoids having to embed the drivers,

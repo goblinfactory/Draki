@@ -7,7 +7,7 @@ namespace Tests
     [SetUpFixture]
     public class Bootstrapper : FluentTest
     {
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             FluentSession.EnableStickySession();
@@ -15,6 +15,7 @@ namespace Tests
             Config.WaitUntilTimeout(TimeSpan.FromMilliseconds(1000));
         }
 
+        [OneTimeTearDown]
         public void Teardown()
         {
 

@@ -1,14 +1,8 @@
 # Draki - Fluent web automation for C#
 
-- previoulsy known as 'Draki.Core', and 'Draki.SeleniumWebDriver'. 
-
 ### write robust web automation scripts in C#. Use for requirement verification, smoke tests, acceptance tests, you name it, Draki does it, fluently, quickly, easily.
 
-*Make it so easy to write a functional smoke test for your web application that there's no excuse not to!*
-
-*Smoke testing library with a deliberately simple API that does not allow you to test functionality that you should only be testing by using a javascript testing framework. (e.g. complex mouse movements)*
-
-*This is the test framework that every manager should insist their dev team use. Rapidly get broad (critical paths) tested and baked into your CICD, and don't get bogged down in detail, leave that to the Angular devs and to Jasmin [and other test tools](https://medium.com/powtoon-engineering/a-complete-guide-to-testing-javascript-in-2017-a217b4cd5a2a).*
+*Draki makes it easy to write a functional smoke test using an easy to read fluent syntax for automating functional and acceptance tests of a web application and the related back end services. The fastest way to get up and running writing end to end automated web tests in .NET. Draki is a single (combined) package replacing the older `Draki.Core`, and `Draki.SeleniumWebDriver` packages.*
 
 ## Getting started
 

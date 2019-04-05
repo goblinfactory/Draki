@@ -49,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDotNetFramework", "Samp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PackageTests", "PackageTests", "{DAECF80D-FBAE-4F48-9F7D-BF0D162D67BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Draki.PackageTest.2002-alpha", "Draki.PackageTest.2002-alpha\Draki.PackageTest.2002-alpha.csproj", "{C9353A97-1708-4031-8AD3-37B9640F9899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Draki.PackageTest", "Draki.PackageTest\Draki.PackageTest.csproj", "{5700D568-2FC3-4BF1-8192-9402BC4D1DFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,10 +81,10 @@ Global
 		{CDDBD001-D22C-4E81-BDA3-D873522C88A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDDBD001-D22C-4E81-BDA3-D873522C88A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDDBD001-D22C-4E81-BDA3-D873522C88A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9353A97-1708-4031-8AD3-37B9640F9899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9353A97-1708-4031-8AD3-37B9640F9899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9353A97-1708-4031-8AD3-37B9640F9899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9353A97-1708-4031-8AD3-37B9640F9899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5700D568-2FC3-4BF1-8192-9402BC4D1DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5700D568-2FC3-4BF1-8192-9402BC4D1DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5700D568-2FC3-4BF1-8192-9402BC4D1DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5700D568-2FC3-4BF1-8192-9402BC4D1DFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,7 +92,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{ED054709-1174-45C9-BF06-107BCC36AD60} = {A176F131-892D-497A-BEEA-9544FEF02029}
 		{CDDBD001-D22C-4E81-BDA3-D873522C88A5} = {A176F131-892D-497A-BEEA-9544FEF02029}
-		{C9353A97-1708-4031-8AD3-37B9640F9899} = {DAECF80D-FBAE-4F48-9F7D-BF0D162D67BF}
+		{5700D568-2FC3-4BF1-8192-9402BC4D1DFD} = {DAECF80D-FBAE-4F48-9F7D-BF0D162D67BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53C1E72E-10CF-44CC-B133-E5B821C7E8A9}
