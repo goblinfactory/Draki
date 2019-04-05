@@ -2,6 +2,7 @@
 
 ## TODO
 
+- found out why older packages show by: goblinfactory, and newer packages show blank? Possibly because of some delay in some validation.
 - treat warnings as errors, get to zero warnings.
 - create Draki gitter. Remove old.
 - create draki website.

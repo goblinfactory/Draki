@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp2.2;netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0.31</Version>
+    <Version>2.0.0.32</Version>
     <Title>Draki fluent web automation for C# (Latest and single replacement package for Draki.Core and Draki.SeleniumWebDriver.)</Title>
     <Authors>goblinfactory</Authors>
     <Company>Goblinfactory Limited</Company>
@@ -12,8 +12,8 @@
     <PackageProjectUrl>https://github.com/goblinfactory/Draki</PackageProjectUrl>
     <RepositoryUrl>https://github.com/goblinfactory/Draki</RepositoryUrl>
     <PackageReleaseNotes>Move to dotnet core.</PackageReleaseNotes>
-    <AssemblyVersion>2.0.0.31</AssemblyVersion>
-    <FileVersion>2.0.0.31</FileVersion>
+    <AssemblyVersion>2.0.0.32</AssemblyVersion>
+    <FileVersion>2.0.0.32</FileVersion>
     <RootNamespace>Draki</RootNamespace>
     <PackageId>Draki</PackageId>
     <Owners>goblinfactory</Owners>
