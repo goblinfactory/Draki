@@ -37,11 +37,10 @@ outstanding balance | appropriate style | should see warning | should see reason
 
 
 
-#### 2) install draki test package in your test project (you need to run both commands below)
+#### 2) install draki test package in your test project
 
 ```powershell
- > install package draki.core
- > install-package draki.seleniumwebdriver
+ > install package draki
 ```
 
 #### 3) Initialising the test engine
@@ -208,3 +207,12 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 ### useful references
 
 * https://www.automatetheplanet.com/selenium-webdriver-csharp-cheat-sheet/
+
+### Knowledge base
+
+##### Error] Unable to find ... testhost.dll
+
+- If using Nunit 3, then install nunit test adapter. 
+
+asdasdasdas
+

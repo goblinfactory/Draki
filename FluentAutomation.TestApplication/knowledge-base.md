@@ -21,3 +21,7 @@
 - this is a F**** horrendous technique because everywhere where you reference the script will need to be updated,
    and you'll either have to do some stupid node precompile step and inject a token or variable, or it will 
    eventually get out of sync! i.e. pages 4,5, 6, 9 all on v10, and 7,8 on v9 and you didnt notice! Grrr, #FAIL !
+
+### Packaging problems with nuspec
+
+- checkout discussion here : https://stackoverflow.com/questions/14797525/differences-between-nuget-packing-a-csproj-vs-nuspec
