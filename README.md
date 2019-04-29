@@ -208,5 +208,3 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 
 - If using Nunit 3, then install nunit test adapter. 
 
-asdasdasdas
-
