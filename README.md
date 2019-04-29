@@ -161,10 +161,6 @@ Run your tests simultaneously in both Firefox and Chrome and IE and record scree
 // Multi-provider sample coming soon...
 ```
 
-### How is Draki different to simply using Selenium directly?
-
-- busy with the docs for this now.
-
 ### Building the solution and running the unit tests
 
 1. build the solution
