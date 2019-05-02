@@ -2,6 +2,7 @@
 
 ## TODO
 
+- Do comparison between Coypu and draki. Run the same tests using each library. See if drag drop works in Coypu.
 - found out why older packages show by: goblinfactory, and newer packages show blank? Possibly because of some delay in some validation.
 - treat warnings as errors, get to zero warnings.
 - create Draki gitter. Remove old.
